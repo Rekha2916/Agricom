@@ -1,0 +1,32 @@
+create table g3_farm_deatils
+(
+id number(5) primary key,
+FName varchar2(255),
+FEmail varchar2(255),
+FMobile number(11),
+FPassword varchar2(255)
+);
+
+CREATE SEQUENCE g3_farm_seq
+START WITH 1
+INCREMENT BY 1
+alter table g3_farm_deatils rename to g3_farm_details
+
+select * from g3_farm_details
+=============================================
+Trader
+=============================
+create table g3_trad_details
+(
+id number(5) primary key,
+TName varchar2(255),
+TEmail varchar2(255),
+TMobile number(11),
+TPassword varchar2(255)
+);
+
+CREATE SEQUENCE g3_trad_seq
+START WITH 1
+INCREMENT BY 1
+
+select * from g3_trad_details

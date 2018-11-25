@@ -3,7 +3,7 @@ package com.farm.model;
 public class FarmFarmer {
 	private String FName;
 	private String FEmail;
-	private int FContact;
+	private int FMobile;
 	private String FPassword;
 	public String getFName() {
 		return FName;
@@ -17,11 +17,11 @@ public class FarmFarmer {
 	public void setFEmail(String fEmail) {
 		FEmail = fEmail;
 	}
-	public int getFContact() {
-		return FContact;
+	public int getFMobile() {
+		return FMobile;
 	}
-	public void setFContact(int fContact) {
-		FContact = fContact;
+	public void setFMobile(int fMobile) {
+		FMobile = fMobile;
 	}
 	public String getFPassword() {
 		return FPassword;

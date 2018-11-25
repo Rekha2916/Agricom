@@ -10,19 +10,41 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.farm.dao.FarmDaoImplement;
 import com.farm.model.FarmFarmer;
+import com.farm.model.LoginFarmer;
 @Controller
 public class FarmerController {
 	@Autowired
 	FarmDaoImplement fdao;
 	
-	@RequestMapping(value="/RegisterFarmer",method=RequestMethod.GET)
+	@RequestMapping(value="/SignupFarmer",method=RequestMethod.POST)
 	public ModelAndView register( ) 
 	{
 		
-		return new ModelAndView("RegisterFarmer");
+		return new ModelAndView("SignupFarmer");
 		
 	}
-	@RequestMapping(value="/FarmerWelcome", method=RequestMethod.POST)
+	@RequestMapping(value="/LoginFarmer",method=RequestMethod.POST)
+	public ModelAndView loginFarmer( ) 
+	{
+		
+		return new ModelAndView("LoginFarmer");
+		
+	}
+	@RequestMapping(value="/SubmitLoginF",method=RequestMethod.POST)
+	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, @ModelAttribute LoginFarmer lfarmer) 
+	{
+		
+		FarmFarmer farmer = fdao.validate(lfarmer);
+		String user=farmer.getFEmail();
+	    if (null != farmer) {
+	    	return new ModelAndView("FarmerWelcome","user",user);
+	    
+	    } else {
+	    	return new ModelAndView("LoginFarmer","user",user);
+	    }
+		
+	}
+	@RequestMapping(value="/SubmitFarmer", method=RequestMethod.POST)
 	public ModelAndView registerFarmer(HttpServletRequest request, HttpServletResponse response, @ModelAttribute FarmFarmer farmer ) 
 	{
 		
@@ -32,7 +54,8 @@ public class FarmerController {
 		int i=fdao.addFarmer(farmer);
 		if(i>0)
 		{
-			return new ModelAndView("FarmerWelcome");
+			String str="Registered Successfully";
+			return new ModelAndView("index","message",str);
 		}
 		return new ModelAndView("RegisterFarmer");
 		

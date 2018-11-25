@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html >
 <html>
 <head>
@@ -7,15 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form method="post" action="FarmerWelcome" >
-							<input type="text" name=" FName" onfocus="this.value = '';"  />
-							
-							<input type="email"  name=" FEmail" onfocus="this.value = '';"   />
-							<input type="number"  name="FContact " onfocus="this.value = '';"  />
-							<input type="password"  name="FPassword" onfocus="this.value = '';" />
-							
-							<input type="submit"  value="SignUp"/>
-							</form>
-							
+	<form action="FarmerWelcome" method="post">
+		<input type="text" id="FName" name="FName">
+		<input type="email" id="FEmail" name="FEmail"> 
+		<input type="number" id="FContact" name="FContact">
+		<input type="password" id="FPassword" name="FPassword">
+		 <input type="submit" value="SignUp" />
+	</form>
 </body>
 </html>
