@@ -1,10 +1,13 @@
 package com.farm.model;
 
 public class FarmFarmer {
+
 	private String FName;
 	private String FEmail;
 	private int FMobile;
 	private String FPassword;
+	
+
 	public String getFName() {
 		return FName;
 	}

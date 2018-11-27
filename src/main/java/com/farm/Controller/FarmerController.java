@@ -54,10 +54,18 @@ public class FarmerController {
 		int i=fdao.addFarmer(farmer);
 		if(i>0)
 		{
-			String str="Registered Successfully";
-			return new ModelAndView("index","message",str);
+		
+			return new ModelAndView("index");
 		}
-		return new ModelAndView("RegisterFarmer");
+		return new ModelAndView("SignupFarmer");
+		
+	}
+	
+	@RequestMapping(value="/logout")
+	public ModelAndView logoutFarmer( ) 
+	{
+		
+		return new ModelAndView("Logout");
 		
 	}
 }

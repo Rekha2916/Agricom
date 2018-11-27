@@ -111,7 +111,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
 		</div>
 	</div>
 		<div class="container card form_container" style="display: flex; justify-content: center; align-items: center;">
-			<form class="form" action="submitFarmer" method=post style="padding-top:40px;">
+			<form class="form" action="SubmitFarmer" method=post style="padding-top:40px;">
 			  <div class="form-row" style="width:550px">
 				<h4>Enter Details</h4>
 			  	<div class="form-group col-md-12">
@@ -124,24 +124,24 @@ function hideURLbar(){ window.scrollTo(0,1); }
 			    </div>
 			    <div class="form-group col-md-12">
 			      <label for="inputMobile">Mobile</label>
-			      <input type="tel" class="form-control" name="FMobile" pattern="[789][0-9]{9}"" title="10 digit number starting with 7,8, or 9" placeholder="XXXXXXXXXX" required>
+			      <input type="tel" class="form-control" name="FMobile"   placeholder="XXXXXXXXXX" required>
 			    </div>
 			    <div class="form-group col-md-12">
 			      <label for="inputPassword4">Password</label>
 			      <input type="password" class="form-control" name="FPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least one numeric value, one uppercase and lowercase letter and at least 8 or more characters" placeholder="Password" required>
 			    </div>
-			    <div class="form-group col-md-12">
+			    <!--  <div class="form-group col-md-12">
 			      <label for="inputPassword4">Confirm Password</label>
 			      <input type="password" class="form-control" name="inputPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Enter same as password" placeholder="Password" required><br>
-			    </div>
-			    <h4>Address Details</h4>
+			    </div> -->
+			   <!-- <h4>Address Details</h4>
 			    <div class="form-group col-md-12">
 			    <label for="inputAddress">Address</label>
-			    <input type="text" class="form-control" name="inputAddress" placeholder="Address Line 1" required>
+			    <input type="text" class="form-control" name="inputAddress" placeholder="Address Line 1" >
 			    </div>
 			     <div class="form-group col-md-12">
 			    <label for="inputAddress">Address</label>
-			    <input type="text" class="form-control" name="inputAddress" placeholder="Address Line 2" required>
+			    <input type="text" class="form-control" name="inputAddress" placeholder="Address Line 2">
 			    </div>
 			  </div>
 
@@ -195,11 +195,11 @@ function hideURLbar(){ window.scrollTo(0,1); }
 			    <label for="inputCertificate">Certificate</label>
 			    <input type="file" class="form-control" name="inputCertificate" accept="application/pdf" placeholder="XXXXXXXXXXXX" ><br>
 			    </div>
-			  </div>
+			  </div> --> 
 			  <div class="form-group">
 			    <div class="form-check">
 			      <p>Already a user? Skip to <a class="login_ref" href="#small-dialog" id="checkuser">Login</a></p>
-			      
+			     
 			      <!-- <label class="form-check-label" for="gridCheck">
 			        Check me out
 			      </label> -->
