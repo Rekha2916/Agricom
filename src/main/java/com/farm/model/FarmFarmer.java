@@ -2,12 +2,19 @@ package com.farm.model;
 
 public class FarmFarmer {
 
+	private int id;
 	private String FName;
 	private String FEmail;
-	private int FMobile;
+	private long FMobile;
 	private String FPassword;
 	
 
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String getFName() {
 		return FName;
 	}
@@ -20,10 +27,10 @@ public class FarmFarmer {
 	public void setFEmail(String fEmail) {
 		FEmail = fEmail;
 	}
-	public int getFMobile() {
+	public long getFMobile() {
 		return FMobile;
 	}
-	public void setFMobile(int fMobile) {
+	public void setFMobile(long fMobile) {
 		FMobile = fMobile;
 	}
 	public String getFPassword() {

@@ -129,7 +129,8 @@ function hideURLbar(){ window.scrollTo(0,1); }
 			      <label for="inputPassword4">Password</label>
 			      <input type="password" class="form-control" name="TPassword" placeholder="Password" required>
 			    </div>
-			    <div class="form-group col-md-12">
+			    <div>  <button type="submit" class="btn btn-primary">Sign in</button></div>
+			   <!--   <div class="form-group col-md-12">
 			      <label for="inputPassword4">Confirm Password</label>
 			      <input type="password" class="form-control" name="inputPassword" placeholder="Password" required>
 			    </div>
@@ -181,13 +182,13 @@ function hideURLbar(){ window.scrollTo(0,1); }
 			  <div class="form-group">
 			    <div class="form-check">
 			      <p>Already a user? Skip to <a class="login_ref" href="login.html" id="checkuser">Login</a></p>
-			      
+			      -->
 			      <!-- <label class="form-check-label" for="gridCheck">
 			        Check me out
 			      </label> -->
 			    </div>
 			  </div>
-			  <button type="submit" class="btn btn-primary">Sign in</button>
+			
 			</form>	
 		</div>
 </body>

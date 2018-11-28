@@ -52,6 +52,12 @@ public class FBiddingController {
 	public ModelAndView viewMarket()
 	{
 		System.out.println("test....");
-		return new ModelAndView("ViewMarket");
+		 List<FarmerCrop> list= new LinkedList<FarmerCrop>();
+	        list=cdao.getBidCrops();  
+	        ModelAndView map = new ModelAndView("ViewMarket");
+	        map.addObject("view",list);
+	        System.out.println("test");
+	        return map;
+
 	}
 }

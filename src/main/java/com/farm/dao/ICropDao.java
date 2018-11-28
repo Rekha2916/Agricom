@@ -7,4 +7,6 @@ import com.farm.model.FarmerCrop;
 public interface ICropDao {
 	public int saveData(FarmerCrop e);
 	public List<FarmerCrop> getCrops();
+	public List<FarmerCrop> getBidCrops();
+	public void insertBid(int bidAmount, String cName);
 }

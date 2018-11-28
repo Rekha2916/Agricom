@@ -1,6 +1,8 @@
 package com.farm.Controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -27,7 +29,7 @@ public class TraderController {
 		
 	}
 	@RequestMapping(value="/LoginTrader",method=RequestMethod.POST)
-	public ModelAndView loginFarmer( ) 
+	public ModelAndView loginTrader( ) 
 	{
 		
 		return new ModelAndView("LoginTrader");
@@ -43,8 +45,8 @@ public class TraderController {
 		int i=tdao.addTrader(trader);
 		if(i>0)
 		{
-			String str="Registered Successfully";
-			return new ModelAndView("index","message",str);
+		
+			return new ModelAndView("index");
 		}
 		return new ModelAndView("SignupTrader");
 		
@@ -55,6 +57,8 @@ public class TraderController {
 		
 		FarmTrader farmer = tdao.validate(ltrader);
 		String user=farmer.getTEmail();
+		HttpSession session=request.getSession();
+		session.setAttribute("tuser", user);
 	    if (null != farmer) {
 	    	return new ModelAndView("TraderWelcome","user",user);
 	    

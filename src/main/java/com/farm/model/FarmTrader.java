@@ -1,11 +1,19 @@
 package com.farm.model;
 
 public class FarmTrader {
+	private int Id;
 	private String TName;
 	private String TEmail;
 	private int TMobile;
 	private String TPassword;
-	 public FarmTrader()
+	
+	 public int getId() {
+		return Id;
+	}
+	public void setId(int tId) {
+	Id = tId;
+	}
+	public FarmTrader()
 	 {
 		 
 	 }

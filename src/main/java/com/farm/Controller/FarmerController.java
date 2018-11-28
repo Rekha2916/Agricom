@@ -1,6 +1,8 @@
 package com.farm.Controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,12 +37,15 @@ public class FarmerController {
 	{
 		
 		FarmFarmer farmer = fdao.validate(lfarmer);
-		String user=farmer.getFEmail();
+		//String user=farmer.getFEmail();
+		//HttpSession session=request.getSession();
+		//session.setAttribute("user", user);
+		
 	    if (null != farmer) {
-	    	return new ModelAndView("FarmerWelcome","user",user);
+	    	return new ModelAndView("FarmerWelcome");
 	    
 	    } else {
-	    	return new ModelAndView("LoginFarmer","user",user);
+	    	return new ModelAndView("LoginFarmer");
 	    }
 		
 	}

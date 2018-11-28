@@ -23,7 +23,6 @@ public class FarmDaoImplement implements IFarmerDao {
 	public int addFarmer(FarmFarmer f) {
 		// TODO Auto-generated method stub
 		System.out.println("in save data..");
-		//String query="insert into g3_farm_details values('"+f.getFName()+"','"+f.getFEmail()+"',"+f.getFContact()+",'"+f.getFPassword()+"')";
 		String query="insert into g3_farm_details values(g3_farm_seq.nextval,'"+f.getFName()+"','"+f.getFEmail()+"',"+f.getFMobile()+",'"+f.getFPassword()+"')";
 		return jdbcTemplate.update(query);
 	}
@@ -47,7 +46,7 @@ class FarmMapper implements RowMapper<FarmFarmer> {
 	    FarmFarmer farmer = new FarmFarmer();
 	    farmer.setFName(rs.getString("FName"));
 	    farmer.setFEmail(rs.getString("FEmail"));
-	    farmer.setFMobile(rs.getInt("FMobile"));
+	    farmer.setFMobile(rs.getLong("FMobile"));
 	    farmer.setFPassword(rs.getString("FPassword"));
 	    
 	    return farmer;
