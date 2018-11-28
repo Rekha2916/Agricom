@@ -82,7 +82,7 @@ $(document).ready(function(){
  <div class="banner">
  	<div class="cont"  style="display: flex;display: none; justify-content: center; align-items: center;width="50%">
 	<p> <a href="placerequest">Place Crop Sell Request</a></p>
-	<p> <a href="viewcrophistory">View Sold Crop History</a></p>
+	<p> <a href="viewcrophistory">View Crop History</a></p>
 	<p> <a href="viewmarketplace">View Marketplace</a></p>
    </div>
 	</div>

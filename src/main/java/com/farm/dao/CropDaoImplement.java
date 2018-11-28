@@ -1,6 +1,13 @@
 package com.farm.dao;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 
 import com.farm.model.FarmerCrop;
 
@@ -18,5 +25,29 @@ public class CropDaoImplement {
 		String query="insert into g3_crops values (crops_seq.nextval,'"+e.getcType()+"','"+e.getcName()+"','"+e.getcFertilizerType()+"','"+e.getcQuantity()+"',default,"+e.getcBasePrice()+",default,default,default)";
 		return jdbcTemplate.update(query);
 	}
+	public List<FarmerCrop> getCrops(){    
+		return jdbcTemplate.query( "select * from g3_crops", new ResultSetExtractor<List<FarmerCrop>>(){  
+			public List<FarmerCrop> extractData(ResultSet rs) throws SQLException, DataAccessException {    
+				List<FarmerCrop> list=new ArrayList<FarmerCrop>();  
+				while(rs.next()){  
+					FarmerCrop f=new FarmerCrop();
+					f.setcId(rs.getInt(1));
+					f.setcType(rs.getString(2));
+					f.setcName(rs.getString(3));
+					f.setcFertilizerType(rs.getString(4));
+					f.setcQuantity(rs.getInt(5));
+					f.setcStatus(rs.getInt(6));
+					f.setcBasePrice(rs.getInt(7));
+
+					list.add(f);  
+				}  
+				return list;  
+			}  
+		});
+	}
+
+		
+
+
 
 }

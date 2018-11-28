@@ -2,7 +2,7 @@ package com.farm.model;
 
 
 public class FarmerCrop {
-                         	//variable for crop id
+     private int cId;                  	//variable for crop id
 	private String cType;					//variable for crop type
 	private String cName;					//variable for crop name
 	private String cFertilizerType;		//variable for Fertilizer type used in crop
@@ -15,8 +15,15 @@ public class FarmerCrop {
     private int cRequestStatus;			//variable for request status
 	//getter and setter methods for all variables
 	
+    
 	public String getcType() {
 		return cType;
+	}
+	public int getcId() {
+		return cId;
+	}
+	public void setcId(int cId) {
+		this.cId = cId;
 	}
 	public void setcType(String cType) {
 		this.cType = cType;

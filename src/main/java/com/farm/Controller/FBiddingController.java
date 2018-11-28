@@ -1,4 +1,7 @@
 package com.farm.Controller;
+import java.util.LinkedList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,5 +37,21 @@ public class FBiddingController {
 		return new ModelAndView("FarmerWelcome");
 		}
 		return new ModelAndView("placesellrequest");
+	}
+	@RequestMapping("/viewcrophistory")
+	public ModelAndView viewCrop()
+	{
+		System.out.println("test....");
+		 List<FarmerCrop> list= new LinkedList<FarmerCrop>();
+	        list=cdao.getCrops();  
+	        ModelAndView map = new ModelAndView("ViewCrop");
+	        map.addObject("crops",list);
+	        return map;
+	}
+	@RequestMapping("/viewmarketplace")
+	public ModelAndView viewMarket()
+	{
+		System.out.println("test....");
+		return new ModelAndView("ViewMarket");
 	}
 }
