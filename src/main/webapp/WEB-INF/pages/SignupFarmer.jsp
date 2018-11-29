@@ -110,10 +110,10 @@ function hideURLbar(){ window.scrollTo(0,1); }
 					<div class="clearfix"> </div>
 		</div>
 	</div>
-		<div class="container card form_container" style="display: flex; justify-content: center; align-items: center;">
+		<div class="container card form_container" style="display: flex; justify-content: center; align-items: center;background-image: url('resources/images/images.jfif');background-size:  100%; width: 100%">
 			<form class="form" action="SubmitFarmer" method=post style="padding-top:40px;">
 			  <div class="form-row" style="width:550px">
-				<h4>Enter Details</h4>
+			
 			  	<div class="form-group col-md-12">
 			    	<br><label for="name">Name</label>
 			    	<input type="text" class="form-control" name="FName" placeholder="Enter your name" required>
@@ -130,82 +130,18 @@ function hideURLbar(){ window.scrollTo(0,1); }
 			      <label for="inputPassword4">Password</label>
 			      <input type="password" class="form-control" name="FPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Password must contain at least one numeric value, one uppercase and lowercase letter and at least 8 or more characters" placeholder="Password" required>
 			    </div>
-			    <!--  <div class="form-group col-md-12">
-			      <label for="inputPassword4">Confirm Password</label>
-			      <input type="password" class="form-control" name="inputPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Enter same as password" placeholder="Password" required><br>
-			    </div> -->
-			   <!-- <h4>Address Details</h4>
-			    <div class="form-group col-md-12">
-			    <label for="inputAddress">Address</label>
-			    <input type="text" class="form-control" name="inputAddress" placeholder="Address Line 1" >
-			    </div>
-			     <div class="form-group col-md-12">
-			    <label for="inputAddress">Address</label>
-			    <input type="text" class="form-control" name="inputAddress" placeholder="Address Line 2">
-			    </div>
+			  
+			   <div class="form-group col-md-12">
+			  <button type="submit" class="btn btn-primary" style="width: 100%; align-items: center;">Sign in</button>
 			  </div>
-
-			  <div class="form-row" style="width:550px;">
-			    <div class="form-group col-md-4">
-			      <label for="inputCity">City</label>
-			      <input type="text" class="form-control" name="inputCity" placeholder="City" >
-			    </div>			    
-			    <div class="form-group col-md-4">
-			      <label for="inputState">State</label>
-			      <select name="inputState" class="form-control">
-			        <option selected>State</option>
-			        <option>Maharashtra</option>
-			        <option>Tamil Nadu</option>
-			        <option>Karnataka</option>
-			      </select>
-			    </div>
-			    <div class="form-group col-md-4">
-			      <label for="inputZip">Zip</label>
-			      <input type="text" class="form-control" name="inputZip">
-			    </div>
+			  
 			    <div class="form-group col-md-12">
-			    <label for="inputArea">Area</label>
-			    <input type="text" class="form-control" name="inputArea" placeholder="Area in hectares" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputAddress">Address</label>
-			    <input type="text" class="form-control" name="inputLAddress" placeholder="Address" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputZip">Zip</label>
-			    <input type="text" class="form-control" name="inputLZip">
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputAccNo">Account No.</label>
-			    <input type="text" class="form-control" name="inputAccNo" placeholder="XXXXXXXXXXXX" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputIFSC">IFSC Code</label>
-			    <input type="text" class="form-control" name="inputIFSC" placeholder="XXXXXXXXXXX" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputAadhaar">Aadhaar</label>
-			    <input type="file" class="form-control" name="inputAadhaar" accept="application/pdf" placeholder="XXXXXXXXXXXX" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputPAN">PAN</label>
-			    <input type="file" class="form-control" name="inputPAN" accept="application/pdf" placeholder="XXXXXXXXXXXX" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputCertificate">Certificate</label>
-			    <input type="file" class="form-control" name="inputCertificate" accept="application/pdf" placeholder="XXXXXXXXXXXX" ><br>
-			    </div>
-			  </div> --> 
-			  <div class="form-group">
 			    <div class="form-check">
-			      <p>Already a user? Skip to <a class="login_ref" href="#small-dialog" id="checkuser">Login</a></p>
+			      <p>Already a user? Skip to <a class="login_ref" href="login" id="checkuser">Login</a></p>
 			     
-			      <!-- <label class="form-check-label" for="gridCheck">
-			        Check me out
-			      </label> -->
+			     
 			    </div>
 			  </div>
-			  <button type="submit" class="btn btn-primary">Sign in</button>
 			</form>	
 		</div>
 </body>

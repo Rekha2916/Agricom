@@ -33,8 +33,8 @@ function hideURLbar(){ window.scrollTo(0,1); }
 				<!--start-top-nav-->
 				<div class="top-nav">
 					<ul>
-						<li class="active"><a class="play-icon popup-with-zoom-anim"
-							href="#small-dialog">Logout</a></li>
+						<li class="active"><a class="play-icon popup-with-zoom-anim" href="logout" onclick="alert('Are you sure to logout?')">LOGOUT</a></li>	
+
 					</ul>
 				</div>
 
@@ -64,16 +64,10 @@ function hideURLbar(){ window.scrollTo(0,1); }
 				<a class="toggleMenu" href="#"><img src="images/menu-icon.png"
 					alt="" /> </a>
 				<ul class="nav" id="nav">
-					<li><button id="pr" type="submit" class="btn btn-primary"
-							style="align-items: center" width="50%"><%=session.getAttribute("user") %></li>
-					<li><button id="i" type="submit" class="btn btn-primary"
-							style="align-items: center" width="50%">
-							Insurance</a></li>
-
-
-					<li><button id="b" type="submit" class="btn btn-primary"
-							style="align-items: center" width="50%">Bidding</button></li>
-
+		
+					<li><a href="back"><button id="b" type="submit" class="btn btn-primary"
+							style="align-items: center" width="50%">Back</button></a></li>
+					
 				</ul>
 
 				<!----start-top-nav-script---->
@@ -96,7 +90,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
 	<div class="container card form_container" style="display: flex; justify-content: center; align-items: center;">
 		<form class="form" action="SubmitCropRequest" method="post" style="padding-top: 40px;">
 			<div class="form-row" style="width: 550px">
-				<h4>Enter Details</h4>
+				<h4>Crop Request Details</h4>
 				<div class="form-group col-md-12">
 					<br>
 					<label for="inputCropType">Crop Type</label> <input type="text"
@@ -133,8 +127,9 @@ function hideURLbar(){ window.scrollTo(0,1); }
 					
 				
 			</div> 
-			
+			<div class="form-group col-md-12"></div>
 		 <button type="submit" class="btn btn-primary">Place Request</button>
+		 </div>
 			</form>
 			</div>
 		

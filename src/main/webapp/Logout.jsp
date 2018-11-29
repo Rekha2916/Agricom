@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>you have logged out successfully</h1>
-<p><a href="index.jsp">Click here</a> to Login</p>
+<%session.invalidate();
+response.sendRedirect("index.jsp");
+%>
+
 </body>
 </html>

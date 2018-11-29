@@ -19,13 +19,20 @@ function hideURLbar(){ window.scrollTo(0,1); }
 
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <style>
-table, th, td {
-    border: 1px solid black;
+tr:nth-of-type(odd) { 
+  background: #eee; 
 }
-th, td {
-    padding: 5px;
-    text-align: left;
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
 }
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+
 </style>
 </head>
 <body>
@@ -34,33 +41,32 @@ th, td {
 					<div class="top-header">
 						<div class="container">
 							<div class="logo">
-								
+									<a href="index.html"><img src="images/logo.png" alt=""></a>
 							</div>
 <!--start-top-nav-->
 							 <div class="top-nav">
 								<ul>
 								
-								<li class="active"><a class="play-icon popup-with-zoom-anim" href="logout" onclick="alert('Are you sure to logout?')">LOGOUT</a></li>	
+							<li class="active"><a class="play-icon popup-with-zoom-anim" href="logout" onclick="alert('Are you sure to logout?')">LOGOUT</a></li>	
 								</ul>
 							</div>
 							
 <div class="clearfix"> </div>
 							
-<div class="clearfix"> </div>
+
 							
 						</div>
 				</div>
+
 			
 					
-		<div class="navgation">
-					<div class="menu">
-                         <a class="toggleMenu" href="#"><img src="images/menu-icon.png" alt="" /> </a>
+		
+			
+                         <a class="toggleMenu" href="#"><img src="resources/images/menu-icon.png" alt="" /> </a>
 							<ul class="nav" id="nav">
 							
-						<li><button id="pr" type="submit" class="btn btn-primary"style="align-items: center" width="50%"><%=session.getAttribute("tuser") %></li>
-							
-							<li><button id="i" type="submit" class="btn btn-primary"style="align-items: center" width="50%">Insurance</a></li>
-							<li><button id="b" type="submit" class="btn btn-primary"style="align-items: center" width="50%">Bidding</button></li>
+							<li><a href="back"><button id="b" type="submit" class="btn btn-primary"
+							style="align-items: center" width="50%">Back</button></a></li>
 							
 							</ul>
 
@@ -77,21 +83,21 @@ th, td {
 							<!----//End-top-nav-script---->
 					</div>
 					
-					
+					<div class="clearfix"></div>
 				
 		</div>
 	</div>
 	
-<div class="cont" style="display: flex; justify-content: center; align-items: center;width="50%">
-		<table style="width:100%">
+<div class="cont" style="display: flex; justify-content: center; align-items: center;width="20%">
+		<table id="disp" class="table"style="width:700px" >
 
 <!-- 	<table style="display: flex; justify-content: center; align-items: center;" width="100%" height="50%">
  -->  <tr>
-    <th>Date</th>
+    <th>Crop ID</th>
     <th>Crop Type</th> 
     <th>Crop Name</th>
     <th>Quantity</th>
-    <th>MSP</th>
+    <th>Base Price</th>
     <th>Sold Price</th>
   
   </tr>

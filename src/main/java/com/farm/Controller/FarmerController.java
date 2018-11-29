@@ -25,6 +25,27 @@ public class FarmerController {
 		return new ModelAndView("SignupFarmer");
 		
 	}
+	@RequestMapping("/Register")
+	public ModelAndView signup( ) 
+	{
+		
+		return new ModelAndView("SignupFarmer");
+		
+	}
+	@RequestMapping("/login")
+	public ModelAndView login( ) 
+	{
+		
+		return new ModelAndView("LoginFarmer");
+		
+	}
+	@RequestMapping("/back")
+	public ModelAndView back( ) 
+	{
+		
+		return new ModelAndView("FarmerWelcome");
+		
+	}
 	@RequestMapping(value="/LoginFarmer",method=RequestMethod.POST)
 	public ModelAndView loginFarmer( ) 
 	{
@@ -37,9 +58,9 @@ public class FarmerController {
 	{
 		
 		FarmFarmer farmer = fdao.validate(lfarmer);
-		//String user=farmer.getFEmail();
-		//HttpSession session=request.getSession();
-		//session.setAttribute("user", user);
+		String user=farmer.getFEmail();
+		HttpSession session=request.getSession();
+		session.setAttribute("user", user);
 		
 	    if (null != farmer) {
 	    	return new ModelAndView("FarmerWelcome");
@@ -66,13 +87,13 @@ public class FarmerController {
 		
 	}
 	
-	@RequestMapping(value="/logout")
+	/*@RequestMapping(value="/logout")
 	public ModelAndView logoutFarmer( ) 
 	{
 		
 		return new ModelAndView("Logout");
 		
-	}
+	}*/
 }
 
 

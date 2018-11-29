@@ -120,7 +120,7 @@ $(".glyphicon-eye-open").on("click", function() {
 					<div class="clearfix"> </div>
 		</div>
 	</div>
-		<div class="container card form_container" style="display: flex; justify-content: center; align-items: center;">
+		<div class="container card form_container" style="display: flex; justify-content: center; align-items: center;background-image: url('resources/images/images.jfif');background-size:  100%; width: 100%">
 			<form class="form" action="SubmitLoginF" method=post style="padding-top:40px;">
 			  <div class="form-row" style="width:550px">
 			    <div class="form-group col-md-12">
@@ -130,17 +130,30 @@ $(".glyphicon-eye-open").on("click", function() {
 			    <div class="form-group col-md-12">
 			      <label for="inputPassword">Password</label>
 			      <input type="password" class="form-control" name="FPassword" placeholder="Password" required>
+			       <div >
+			       
+			      <p align="right"><a href="forgotPswd">Forgot Password?</a></p></div>
 			      
 			    </div>
 			  </div>
-			  <div class="form-group">
+			 
+			     <div class="form-group col-md-12">
+			  <button type="submit" class="btn btn-primary" style="width: 100%; align-items: center;">Login</button></div>
+			  
+			   <div class="form-group col-md-12">
 			    <div class="form-check">
-			      <p>Not a user? <a class="login_ref" href="index/#small-dialog1" id="checkuser">Register</a></p>
+			      <p >Not a user? <a class="login_ref" href="Register" id="checkuser">Sign in</a></p>
 			      
+			      <div class="form-group col-md-12"></div>
+			      <div class="form-group col-md-12"></div>
+			      <div class="form-group col-md-12"></div>
+			      <div class="form-group col-md-12"></div>
+			      <div class="form-group col-md-12"></div>
+			      <div class="form-group col-md-12"></div>
+			      <div class="form-group col-md-12"></div>
 			      
 			    </div>
 			  </div>
-			  <button type="submit" class="btn btn-primary">Login</button>
 			</form>	
 		</div>
 </body>

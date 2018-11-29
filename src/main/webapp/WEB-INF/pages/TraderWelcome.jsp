@@ -26,6 +26,17 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+<%
+response.setHeader("Cache-Control","no-cache,no-store, must-revalidate"); 
+if(session==null)
+{
+	if(session.getAttribute("user")==null)
+	{
+		response.sendRedirect("index.jsp");
+	}
+	
+}
+%>
 	<!--start-header-->
 			<div id="home" class="header">
 					<div class="top-header">

@@ -34,11 +34,11 @@ public class CropDaoImplement {
 					f.setcId(rs.getInt(1));
 					f.setcType(rs.getString(2));
 					f.setcName(rs.getString(3));
-					f.setcFertilizerType(rs.getString(4));
+				
 					f.setcQuantity(rs.getInt(5));
-					f.setcStatus(rs.getInt(6));
+				
 					f.setcBasePrice(rs.getInt(7));
-
+					f.setcSellPrice(rs.getInt(8));
 					list.add(f);  
 				}  
 				return list;  

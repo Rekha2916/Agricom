@@ -23,6 +23,17 @@ function hideURLbar(){ window.scrollTo(0,1); }
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<%
+response.setHeader("Cache-Control","no-cache,no-store, must-revalidate"); 
+if(session==null)
+{
+	if(session.getAttribute("user")==null)
+	{
+		response.sendRedirect("index.jsp");
+	}
+	
+}
+%>
 	<!--start-header-->
 			<div id="home" class="header">
 					<div class="top-header">
@@ -56,6 +67,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
 							<form class="form" method="post" action="LoginTrader">
 								<button type="submit" class="btn btn-primary btn-block">Trader</button>
 							</form>
+					<a href="AdminWelcome">Admin</a>
 						</div>
 					</div>
 					<div id="small-dialog1" class="mfp-hide">
