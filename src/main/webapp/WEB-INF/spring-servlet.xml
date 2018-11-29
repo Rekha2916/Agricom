@@ -32,15 +32,17 @@
 		class="org.springframework.jdbc.core.JdbcTemplate">
 		<property name="dataSource" ref="ds"></property>
 	</bean>
-
+<!--  jdbctemplate for farmerdao -->
 	<bean id="edao" class="com.farm.dao.FarmDaoImplement">
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>
 	</bean>
+	<!--  jdbctemplate for Traderdao -->
 	<bean id="tdao" class="com.farm.dao.TraderDaoImplement">
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>
 	</bean>
+	<!--  jdbctemplate for cropdao -->
 	<bean id="cdao" class="com.farm.dao.CropDaoImplement">
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>

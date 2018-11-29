@@ -17,10 +17,12 @@ import com.farm.dao.FarmDaoImplement;
 import com.farm.model.FarmFarmer;
 import com.farm.model.FarmerCrop;
 import com.farm.model.LoginFarmer;
-@Controller
+@Controller										//annotation for declaring class work as controller
 public class TBiddingController {
+	//dao object for crop
 	@Autowired
-	CropDaoImplement cdao;
+	CropDaoImplement cdao;  
+	//mapping for placing current bid
 	@RequestMapping("/placeBid")
 	public ModelAndView placeBid()
 	{
@@ -32,6 +34,7 @@ public class TBiddingController {
         System.out.println("test");
         return map;
 	}
+	//mapping for bidd submit
 	@RequestMapping("/submitBid")
 	public ModelAndView updateBid(HttpServletRequest request, HttpServletResponse response) {
 		int bidAmount=Integer.parseInt(request.getParameter("bidAmount"));
@@ -39,6 +42,7 @@ public class TBiddingController {
 		cdao.insertBid(bidAmount, cName);
 		return new ModelAndView("redirect:/placeBid");
 	}
+	//mapping for result after bid
 	@RequestMapping("bidResult")
 	public ModelAndView bidResult(){
 		List<FarmerCrop> list= new LinkedList<FarmerCrop>();

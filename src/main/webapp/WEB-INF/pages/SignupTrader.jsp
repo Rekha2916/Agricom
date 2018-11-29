@@ -129,63 +129,14 @@ function hideURLbar(){ window.scrollTo(0,1); }
 			      <label for="inputPassword4">Password</label>
 			      <input type="password" class="form-control" name="TPassword" placeholder="Password" required>
 			    </div>
+			       <div class="form-group col-md-12">
+			       
 			    <div>  <button type="submit" class="btn btn-primary">Sign in</button></div>
-			   <!--   <div class="form-group col-md-12">
-			      <label for="inputPassword4">Confirm Password</label>
-			      <input type="password" class="form-control" name="inputPassword" placeholder="Password" required>
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputAddress">Address</label>
-			    <input type="text" class="form-control" name="inputAddress" placeholder="1234 Main St" >
-			    </div>
-			  </div>
-
-			  <div class="form-row" style="width:550px;">
-			    <div class="form-group col-md-5">
-			      <label for="inputCity">City</label>
-			      <input type="text" class="form-control" name="inputCity" placeholder="City" >
-			    </div>			    
-			    <div class="form-group col-md-5">
-			      <label for="inputState">State</label>
-			      <select name="inputState" class="form-control">
-			        <option selected>State</option>
-			        <option>Maharashtra</option>
-			        <option>Tamil Nadu</option>
-			        <option>Karnataka</option>
-			      </select>
-			    </div>
-			    <div class="form-group col-md-2">
-			      <label for="inputZip">Zip</label>
-			      <input type="text" class="form-control" name="inputZip">
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputAccNo">Account No.</label>
-			    <input type="text" class="form-control" name="inputAccNo" placeholder="XXXXXXXXXXXX" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputIFSC">IFSC Code</label>
-			    <input type="text" class="form-control" name="inputIFSC" placeholder="XXXXXXXXXXX" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputAadhaar">Aadhaar</label>
-			    <input type="file" class="form-control" name="inputAadhaar" accept="application/pdf" placeholder="XXXXXXXXXXXX" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputPAN">PAN</label>
-			    <input type="file" class="form-control" name="inputPAN" accept="application/pdf" placeholder="XXXXXXXXXXXX" >
-			    </div>
-			    <div class="form-group col-md-12">
-			    <label for="inputCertificate">Trader's License</label>
-			    <input type="file" class="form-control" name="inputTraderLicense" accept="application/pdf" placeholder="XXXXXXXXXXXX" ><br>
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <div class="form-check">
+			  
+			     <div class="form-group col-md-12">
 			      <p>Already a user? Skip to <a class="login_ref" href="login.html" id="checkuser">Login</a></p>
-			      -->
-			      <!-- <label class="form-check-label" for="gridCheck">
-			        Check me out
-			      </label> -->
+		
+			     
 			    </div>
 			  </div>
 			

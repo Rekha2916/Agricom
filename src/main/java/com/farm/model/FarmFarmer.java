@@ -1,14 +1,14 @@
 package com.farm.model;
 
 public class FarmFarmer {
-
+	// Properties of farmer
 	private int id;
 	private String FName;
 	private String FEmail;
 	private long FMobile;
 	private String FPassword;
-	
 
+	//setter and getter
 	public int getId() {
 		return id;
 	}

@@ -12,26 +12,23 @@ import com.farm.model.FarmFarmer;
 import com.farm.model.LoginFarmer;
 
 public class FarmDaoImplement implements IFarmerDao {
+	//template for farmer dao
 	JdbcTemplate jdbcTemplate;
+	// setter and getter of jdbcTemplate
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;
 	}
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
-	
+	// add farmer to DB
 	public int addFarmer(FarmFarmer f) {
 		// TODO Auto-generated method stub
 		System.out.println("in save data..");
 		String query="insert into g3_farm_details values(g3_farm_seq.nextval,'"+f.getFName()+"','"+f.getFEmail()+"',"+f.getFMobile()+",'"+f.getFPassword()+"')";
 		return jdbcTemplate.update(query);
 	}
-	/*public List<Map<String,Object>> check() {
-		// TODO Auto-generated method stub
-		String query="select FEmail, FPassword from g3_farm_details";
-		return jdbcTemplate.queryForList(query);
-		
-	}*/
+// validate farmer credentials
 	public FarmFarmer validate(LoginFarmer l) {
 		// TODO Auto-generated method stub
 		String sql = "select * from g3_farm_details where FEmail='" + l.getFEmail() + "' and FPassword='" + l.getFPassword()
@@ -41,6 +38,8 @@ public class FarmDaoImplement implements IFarmerDao {
 	    return list.size() > 0 ? list.get(0) : null;
 	    }
 }
+
+//rowmapper class for farmer
 class FarmMapper implements RowMapper<FarmFarmer> {
 	  public FarmFarmer mapRow(ResultSet rs, int arg1) throws SQLException {
 	    FarmFarmer farmer = new FarmFarmer();

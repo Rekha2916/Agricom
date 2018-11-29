@@ -20,7 +20,7 @@ import com.farm.model.LoginTrader;
 public class TraderController {
 	@Autowired
 	TraderDaoImplement tdao;
-	
+	// mapping for signup form 
 	@RequestMapping(value="/SignupTrader",method=RequestMethod.POST)
 	public ModelAndView register( ) 
 	{
@@ -28,6 +28,7 @@ public class TraderController {
 		return new ModelAndView("SignupTrader");
 		
 	}
+	// mapping for login form
 	@RequestMapping(value="/LoginTrader",method=RequestMethod.POST)
 	public ModelAndView loginTrader( ) 
 	{
@@ -35,6 +36,7 @@ public class TraderController {
 		return new ModelAndView("LoginTrader");
 		
 	}
+	// mapping for signup submit
 	@RequestMapping(value="/SubmitTrader", method=RequestMethod.POST)
 	public ModelAndView registerFarmer(HttpServletRequest request, HttpServletResponse response, @ModelAttribute FarmTrader trader ) 
 	{
@@ -51,6 +53,7 @@ public class TraderController {
 		return new ModelAndView("SignupTrader");
 		
 	}
+	// mapping  for submit login
 	@RequestMapping(value="/SubmitLoginT",method=RequestMethod.POST)
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, @ModelAttribute LoginTrader ltrader) 
 	{
@@ -67,6 +70,13 @@ public class TraderController {
 	    	return new ModelAndView("LoginTrader","user",user);
 	    }
 		
+	}
+	@RequestMapping("/RegisterT")
+	public ModelAndView signup( ) 
+	{
+
+		return new ModelAndView("SignupTrader");
+
 	}
 
 }

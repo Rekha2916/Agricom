@@ -142,7 +142,7 @@ $(".glyphicon-eye-open").on("click", function() {
 			  
 			   <div class="form-group col-md-12">
 			    <div class="form-check">
-			      <p >Not a user? <a class="login_ref" href="Register" id="checkuser">Sign in</a></p>
+			      <p >Not a user? <a class="login_ref" href="RegisterF" id="checkuser">Sign in</a></p>
 			      
 			      <div class="form-group col-md-12"></div>
 			      <div class="form-group col-md-12"></div>

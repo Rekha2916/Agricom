@@ -12,19 +12,24 @@ import org.springframework.jdbc.core.ResultSetExtractor;
 import com.farm.model.FarmerCrop;
 
 public class CropDaoImplement {
-	JdbcTemplate jdbcTemplate;
-	public JdbcTemplate getJdbcTemplate() {
+	//template for crop dao
+	JdbcTemplate jdbcTemplate;  
+	// setter and getter of jdbcTemplate
+	public JdbcTemplate getJdbcTemplate() {   
 		return jdbcTemplate;
 	}
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+	
+	// add crops details to DB
 	public int saveData(FarmerCrop e)
 	{
 		System.out.println("in save data..");
 		String query="insert into g3_crops values (crops_seq.nextval,'"+e.getcType()+"','"+e.getcName()+"','"+e.getcFertilizerType()+"','"+e.getcQuantity()+"',default,"+e.getcBasePrice()+",default,default,default)";
 		return jdbcTemplate.update(query);
 	}
+	// get list of crops from DB
 	public List<FarmerCrop> getCrops(){    
 		return jdbcTemplate.query( "select * from g3_crops order by cId", new ResultSetExtractor<List<FarmerCrop>>(){  
 			public List<FarmerCrop> extractData(ResultSet rs) throws SQLException, DataAccessException {    
@@ -34,18 +39,18 @@ public class CropDaoImplement {
 					f.setcId(rs.getInt(1));
 					f.setcType(rs.getString(2));
 					f.setcName(rs.getString(3));
-				
+
 					f.setcQuantity(rs.getInt(5));
-				
+
 					f.setcBasePrice(rs.getInt(7));
 					f.setcSellPrice(rs.getInt(8));
 					list.add(f);  
 				}  
-				return list;  
+				return list;  // return crop list of type FarmerCrop
 			}  
 		});
 	}
-
+ // get details of crop currently on bidding schedule
 	public List<FarmerCrop> getBidCrops(){    
 		return jdbcTemplate.query( "select * from g3_crops where cRequestStatus=0 and rownum=1 order by cId desc", new ResultSetExtractor<List<FarmerCrop>>(){  
 			public List<FarmerCrop> extractData(ResultSet rs) throws SQLException, DataAccessException {    
@@ -69,12 +74,13 @@ public class CropDaoImplement {
 			}  
 		});
 	}
+	// update selling price after bidding
 	public void insertBid(int bidAmount, String cName) {
 		String sql="update g3_crops set CSELLPRICE="+bidAmount+" where CNAME='"+cName+"'";
 		jdbcTemplate.update(sql);
 	}
-	
-	
+
+
 
 
 

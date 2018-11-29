@@ -1,14 +1,15 @@
 package com.farm.model;
 
 public class LoginTrader {
+	//login attributes of Trader
 	private String TEmail;
 	private String TPassword;
-	
+	// default constructor
 	public LoginTrader()
 	{
-		
-	}
 
+	}
+	// setter and getter
 	public String getTEmail() {
 		return TEmail;
 	}

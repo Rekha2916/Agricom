@@ -13,87 +13,92 @@ import org.springframework.web.servlet.ModelAndView;
 import com.farm.dao.FarmDaoImplement;
 import com.farm.model.FarmFarmer;
 import com.farm.model.LoginFarmer;
-@Controller
+@Controller							//annotation
 public class FarmerController {
 	@Autowired
-	FarmDaoImplement fdao;
-	
+	FarmDaoImplement fdao;					//object of farmer dao
+
+	//signup mapping 
 	@RequestMapping(value="/SignupFarmer",method=RequestMethod.POST)
 	public ModelAndView register( ) 
 	{
-		
+
 		return new ModelAndView("SignupFarmer");
-		
+
 	}
-	@RequestMapping("/Register")
-	public ModelAndView signup( ) 
-	{
-		
-		return new ModelAndView("SignupFarmer");
-		
-	}
+
+	//login mapping
 	@RequestMapping("/login")
 	public ModelAndView login( ) 
 	{
-		
+
 		return new ModelAndView("LoginFarmer");
-		
+
 	}
+	//back button mapping
 	@RequestMapping("/back")
 	public ModelAndView back( ) 
 	{
-		
+
 		return new ModelAndView("FarmerWelcome");
-		
+
 	}
+	//loginbutton action mapping
 	@RequestMapping(value="/LoginFarmer",method=RequestMethod.POST)
 	public ModelAndView loginFarmer( ) 
 	{
-		
+
 		return new ModelAndView("LoginFarmer");
-		
+
 	}
+	//loginsubmit action mapping
 	@RequestMapping(value="/SubmitLoginF",method=RequestMethod.POST)
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, @ModelAttribute LoginFarmer lfarmer) 
 	{
-		
+
 		FarmFarmer farmer = fdao.validate(lfarmer);
 		String user=farmer.getFEmail();
-		HttpSession session=request.getSession();
+		HttpSession session=request.getSession();  //session created for farmer user
 		session.setAttribute("user", user);
-		
-	    if (null != farmer) {
-	    	return new ModelAndView("FarmerWelcome");
-	    
-	    } else {
-	    	return new ModelAndView("LoginFarmer");
-	    }
-		
+
+		if (null != farmer) {
+			return new ModelAndView("FarmerWelcome");    //redirect to farmer welcome page
+
+		} else {
+			return new ModelAndView("LoginFarmer");
+		}
+
 	}
+	//addfarmer after signup to db
 	@RequestMapping(value="/SubmitFarmer", method=RequestMethod.POST)
 	public ModelAndView registerFarmer(HttpServletRequest request, HttpServletResponse response, @ModelAttribute FarmFarmer farmer ) 
 	{
-		
-		//ModelAndView mv=new ModelAndView();
-		//mv.addObject(farmer);
 		System.out.println(farmer);
 		int i=fdao.addFarmer(farmer);
 		if(i>0)
 		{
-		
 			return new ModelAndView("index");
 		}
 		return new ModelAndView("SignupFarmer");
-		
+
+	}
+
+	@RequestMapping("/RegisterF")
+	public ModelAndView signup( ) 
+	{
+
+		return new ModelAndView("SignupFarmer");
+
+	}
+	@RequestMapping("/forgotPswd")
+	public ModelAndView forgotpswd( ) 
+	{
+
+		return new ModelAndView("ForgotPassword");
+
 	}
 	
-	/*@RequestMapping(value="/logout")
-	public ModelAndView logoutFarmer( ) 
-	{
-		
-		return new ModelAndView("Logout");
-		
-	}*/
+	
 }
 
 

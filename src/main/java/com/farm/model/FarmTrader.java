@@ -1,22 +1,23 @@
 package com.farm.model;
 
 public class FarmTrader {
+	// Properties of Trader
 	private int Id;
 	private String TName;
 	private String TEmail;
 	private int TMobile;
 	private String TPassword;
-	
-	 public int getId() {
+	// setter and getter
+	public int getId() {
 		return Id;
 	}
 	public void setId(int tId) {
-	Id = tId;
+		Id = tId;
 	}
 	public FarmTrader()
-	 {
-		 
-	 }
+	{
+
+	}
 	public String getTName() {
 		return TName;
 	}
@@ -41,7 +42,7 @@ public class FarmTrader {
 	public void setTPassword(String tPassword) {
 		TPassword = tPassword;
 	}
-	
-	
+
+
 
 }

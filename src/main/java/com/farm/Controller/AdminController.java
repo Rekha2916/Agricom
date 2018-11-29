@@ -18,12 +18,12 @@ public class AdminController {
 	PrintWriter out;
 	@RequestMapping("/AdminWelcome")
 	public ModelAndView adminIndex(){
-		
+
 		return new ModelAndView("LoginAdmin");
 	}
 	@RequestMapping("/logoutAdmin")
 	public ModelAndView logout(){
-		
+
 		return new ModelAndView("index");
 	}
 	@RequestMapping("/SubmitLoginA")
@@ -34,25 +34,15 @@ public class AdminController {
 			if(l.getAPassword().equals(passwd)){
 				return new ModelAndView("AdminWelcome");
 			}
-	
-	}
-		
-	   try {
-		 out=response.getWriter();
-		
-		
-	} catch (IOException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	 
-	   return new ModelAndView("index");
-		
+
+		}	 
+		return new ModelAndView("index");
+
 
 	}
 	@RequestMapping("/ViewFarmer")
 	public ModelAndView farmerList(){
-		
+
 		return new ModelAndView("FarmerList");
 	}
 }

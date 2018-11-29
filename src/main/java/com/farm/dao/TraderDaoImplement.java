@@ -11,19 +11,23 @@ import com.farm.model.FarmFarmer;
 import com.farm.model.FarmTrader;
 import com.farm.model.LoginTrader;
 public class TraderDaoImplement implements ITraderDao{
+	//jdbcTemplate for Trader
 	JdbcTemplate jdbcTemplate;
+	//setter and getter
 	public JdbcTemplate getJdbcTemplate() {
 		return jdbcTemplate;
 	}
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
+	//adding Trader to DB
 	public int addTrader(FarmTrader t) {
 		// TODO Auto-generated method stub
 		System.out.println("in save data..");
 		String query="insert into g3_trad_details values(g3_trad_seq.nextval,'"+t.getTName()+"','"+t.getTEmail()+"',"+t.getTMobile()+",'"+t.getTPassword()+"')";
 		return jdbcTemplate.update(query);
 	}
+	// validate Trader credentials after login
 	public FarmTrader validate(LoginTrader l) {
 		// TODO Auto-generated method stub
 		String sql = "select * from g3_trad_details where TEmail='" + l.getTEmail() + "' and TPassword='" + l.getTPassword()
@@ -33,6 +37,7 @@ public class TraderDaoImplement implements ITraderDao{
 	    return list.size() > 0 ? list.get(0) : null;
 	    }
 }
+//rowmapper for trader
 class TradMapper implements RowMapper<FarmTrader> {
 	  public FarmTrader mapRow(ResultSet rs, int arg1) throws SQLException {
 	    FarmTrader trader = new FarmTrader();

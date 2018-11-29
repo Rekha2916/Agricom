@@ -16,10 +16,12 @@ import com.farm.dao.FarmDaoImplement;
 import com.farm.model.FarmFarmer;
 import com.farm.model.FarmerCrop;
 import com.farm.model.LoginFarmer;
-@Controller
+@Controller //annotation for declaring class work as controller
 public class FBiddingController {
 	@Autowired
-	CropDaoImplement cdao;
+	CropDaoImplement cdao;					//dao object fro crop
+	
+	//mapping for placing crop request
 	@RequestMapping("/placerequest")
 	public ModelAndView requestforsell()
 	{
@@ -27,6 +29,7 @@ public class FBiddingController {
 		return new ModelAndView("PlaceSellRequest");
 	}
 
+	//mapping for request submit action
 	@RequestMapping("/SubmitCropRequest")
 	public ModelAndView submitRequest(@ModelAttribute FarmerCrop f)
 	{
@@ -38,6 +41,7 @@ public class FBiddingController {
 		}
 		return new ModelAndView("placesellrequest");
 	}
+	// mapping for display crop history
 	@RequestMapping("/viewcrophistory")
 	public ModelAndView viewCrop()
 	{
@@ -48,6 +52,7 @@ public class FBiddingController {
 	        map.addObject("crops",list);
 	        return map;
 	}
+	// mapping for display marketplace
 	@RequestMapping("/viewmarketplace")
 	public ModelAndView viewMarket()
 	{
