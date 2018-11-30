@@ -59,6 +59,30 @@ pageEncoding="ISO-8859-1" isELIgnored="false"%>
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-	
+	<div class="cont" style="display: flex; justify-content: center; align-items: center;width="20%">
+		<table id="disp" class="table"style="width:700px" >
+
+<!-- 	<table style="display: flex; justify-content: center; align-items: center;" width="100%" height="50%">
+ -->  <tr>
+    <th> ID</th>
+    
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+
+  </tr>
+  <c:forEach var="farmers" items="${farmers}">   
+   <tr>
+
+     <td><input type="text" value=${farmers.getId()} name="cId" readonly></td>
+ 	    <td><input type="text" value=${farmers.getFName()} name="cType" readonly></td>
+        <td><input type="text" value=${farmers.getFEmail()} name="cName" readonly></td>
+        <td><input type="text" value=${farmers.getFMobile()} name="cQuantity" readonly></td>
+       
+
+    </tr>
+    </c:forEach> 
+</table>
+</div>
 </body>
 </html>

@@ -15,14 +15,18 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.farm.dao.AdminDaoImplement;
 import com.farm.dao.CropDaoImplement;
 import com.farm.model.AdminLogin;
+import com.farm.model.FarmFarmer;
 import com.farm.model.FarmerCrop;
 
 @Controller
 public class AdminController {
 	@Autowired
 	CropDaoImplement cdao;
+	@Autowired
+	AdminDaoImplement adao;
 	PrintWriter out;
 	@RequestMapping("/AdminWelcome")				//Admin index page
 	public ModelAndView adminIndex(){
@@ -45,10 +49,13 @@ public class AdminController {
 		}	 
 		return new ModelAndView("index");
 	}
-	@RequestMapping("/ViewFarmer")					//Admin views farmer list
+	@RequestMapping("/viewfarmer")					//Admin views farmer list
 	public ModelAndView farmerList(){
-
-		return new ModelAndView("FarmerList");
+		List<FarmFarmer> list= new LinkedList<FarmFarmer>();
+		list=adao.getFarmers();
+		ModelAndView map = new ModelAndView("FarmerList");
+		map.addObject("farmers",list);
+		return map;
 	}
 
 	@RequestMapping("/viewcropreq")					//Admin views crop request
@@ -81,4 +88,5 @@ public class AdminController {
 		System.out.println("adminreq....");
 		return new ModelAndView("FarmerWelcome");
 	}
+	
 }

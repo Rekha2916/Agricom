@@ -9,14 +9,15 @@ public class FarmFarmer {
 	private String FPassword;
 
 	//setter and getter
+	
+	public String getFName() {
+		return FName;
+	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public String getFName() {
-		return FName;
 	}
 	public void setFName(String fName) {
 		FName = fName;

@@ -5,7 +5,7 @@ public class FarmTrader {
 	private int Id;
 	private String TName;
 	private String TEmail;
-	private int TMobile;
+	private long TMobile;
 	private String TPassword;
 	// setter and getter
 	public int getId() {
@@ -30,10 +30,10 @@ public class FarmTrader {
 	public void setTEmail(String tEmail) {
 		TEmail = tEmail;
 	}
-	public int getTMobile() {
+	public long getTMobile() {
 		return TMobile;
 	}
-	public void setTMobile(int tMobile) {
+	public void setTMobile(long tMobile) {
 		TMobile = tMobile;
 	}
 	public String getTPassword() {

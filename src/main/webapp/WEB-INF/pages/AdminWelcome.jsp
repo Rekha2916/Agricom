@@ -41,7 +41,7 @@ pageEncoding="ISO-8859-1" isELIgnored="false"%>
 				<a class="toggleMenu" href="#"><img src="resources/images/menu-icon.png" alt="" /> </a>
 				<ul class="nav" id="nav">
 					
-<li><a href="ViewFarmer"><button id="pr" type="submit" class="btn btn-primary"style="align-items: center" width="50%">View Farmers</button></a></li>
+<li><a href="viewfarmer"><button id="pr" type="submit" class="btn btn-primary"style="align-items: center" width="50%">View Farmers</button></a></li>
 							
 							<li><button id="i" type="submit" class="btn btn-primary"style="align-items: center" width="50%">View Traders</a></li>
 							<li><button id="b" type="submit" class="btn btn-primary"style="align-items: center" width="50%">View Current Bid</button></li>

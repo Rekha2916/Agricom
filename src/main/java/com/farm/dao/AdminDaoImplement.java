@@ -7,6 +7,8 @@ import java.util.List;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
+
+import com.farm.model.FarmFarmer;
 import com.farm.model.FarmerCrop;
 
 public class AdminDaoImplement {
@@ -58,4 +60,22 @@ public class AdminDaoImplement {
 			}  
 		});
 	}
+	public List<FarmFarmer> getFarmers(){    
+		return jdbcTemplate.query( "select * from g3_farm_details ", new ResultSetExtractor<List<FarmFarmer>>(){  
+			public List<FarmFarmer> extractData(ResultSet rs) throws SQLException, DataAccessException {    
+				List<FarmFarmer> list=new ArrayList<FarmFarmer>();  
+				while(rs.next()){  
+					FarmFarmer f=new FarmFarmer();
+					f.setId(rs.getInt(1));
+					f.setFName(rs.getString(2));;
+					f.setFEmail(rs.getString(3));;
+					f.setFMobile(rs.getLong(4));;
+				
+					list.add(f);  
+				}  
+				return list;  
+			}  
+		});
+	}
+	
 }
