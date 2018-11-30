@@ -110,7 +110,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
 					<div class="clearfix"> </div>
 		</div>
 	</div>
-		<div class="container card form_container" style="display: flex; justify-content: center; align-items: center;">
+		<div class="container card form_container" style="display: flex; justify-content: center; align-items: center;background-image: url('resources/images/images.jfif');background-size:  100%; width: 100%"">
 			<form class="form" action="SubmitTrader" method=post style="padding-top:40px;">
 			  <div class="form-row" style="width:550px">
 			  	<div class="form-group col-md-12">
@@ -129,18 +129,26 @@ function hideURLbar(){ window.scrollTo(0,1); }
 			      <label for="inputPassword4">Password</label>
 			      <input type="password" class="form-control" name="TPassword" placeholder="Password" required>
 			    </div>
-			       <div class="form-group col-md-12">
-			       
-			    <div>  <button type="submit" class="btn btn-primary">Sign in</button></div>
-			  
 			     <div class="form-group col-md-12">
-			      <p>Already a user? Skip to <a class="login_ref" href="login.html" id="checkuser">Login</a></p>
-		
+			  <button type="submit" class="btn btn-primary" style="width: 100%; align-items: center;">Sign in</button>
+			  </div>
+			  
+			    <div class="form-group col-md-12">
+			    <div class="form-check">
+			      <p>Already a user? Skip to <a class="login_ref" href="login" id="checkuser">Login</a></p>
+			     
 			     
 			    </div>
 			  </div>
-			
 			</form>	
+			<div class="footer">
+                         <div class="container">
+                        
+										
+				
+                         </div>
+					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"></span></a>
+     </div>
 		</div>
 </body>
 </html>

@@ -154,7 +154,9 @@ $(".glyphicon-eye-open").on("click", function() {
 			      
 			    </div>
 			  </div>
+			  
 			</form>	
+		
 		</div>
 </body>
 </html>

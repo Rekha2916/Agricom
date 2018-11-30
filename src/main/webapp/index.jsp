@@ -167,82 +167,25 @@ if(session==null)
 				</div>
 			</div>
 		</div>
-		<div class="news">
-			<div class="container">
-				<div class="news-top">
-					<h3>GUIDLINES</h3>
-				</div>
-				<div class="news-bottom">
-					<div class="col-md-6 news-bottom-left">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox">
-									<img class="port-pic" class="img-responsive" src="images/one-2.jpg" />
-									<div class="b-wrapper">
-										<h2 class="b-animate b-from-left b-from   b-delay03 ">
-											<span>Sed in lacus ut enim adipiscing aliquet</span>
-											<button>View full article</button>
-										</h2>
-									</div>
-								</a>
-					</div>
-					<div class="col-md-6 news-bottom-left">
-						<div class="news-btm">
-							<a href="single.html" class="b-link-stripe b-animate-go  thickbox">
-									<img class="port-pic" src="images/apple.jpg" />
-									<div class="b-wrapper">
-										<h2 class="b-animate b-from-left    b-delay03 ">
-											<button>View full article</button>
-										</h2>
-									</div>
-								</a>
-						</div>
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox">
-									<img class="port-pic" src="images/veg.jpg" />
-									<div class="b-wrapper">
-										<h2 class="b-animate b-from-left    b-delay03 ">
-											<button>View full article</button>
-										</h2>
-									</div>
-								</a>
-					</div>
-					<div class="clearfix"> </div>
-					<div class="news-btm1">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox">
-									<img class="port-pic" class="img-responsive" src="images/fd-btm1.jpg" />
-									<div class="b-wrapper">
-										<h2 class="b-animate b-from-left b-left   b-delay03 ">
-											<span>Sed in lacus ut enim adipiscing aliquet</span>
-											<button>View full article</button>
-										</h2>
-									</div>
-								</a>
-					</div>
-					<div class="fd-btn">
-						<a href="blog.html">More</a>
-					</div>
-				</div>
-			</div>
-		</div>
+	
+				
+				
+					
+					
+					
 		<div class="contact">
 			<div class="container">
 				<div class="contact-main">
 					<div class="col-md-4 contact-left">
 						<h4>For Help center contact</h4>
-						<p><span>Email:</span><a href="mailto:@example.com">123agro@example.com</a></p>
+						<p><span>Email:</span><a href="mailto:@example.com">Farm@agri.com</a></p>
 						<p><span>Phone:</span>+102 0000 0000</p>
 					</div>
 					<div class="col-md-4 contact-left">
 						<h4>Address</h4>
-						<p>agr center,georgia capetown Newyork</p>
+						<p>Agricom Farm , Mumbai, India</p>
 					</div>
-					<div class="col-md-4 contact-left">
-						<h4>Follow us</h4>
-						<ul>
-							<li><a href="#"><span class="fb"> </span></a></li>
-							<li><a href="#"><span class="twit"> </span></a></li>
-							<li><a href="#"><span class="in"> </span></a></li>
-							<li><a href="#"><span class="yt"> </span></a></li>
-						</ul>
-					</div>
+					
 					<div class="clearfix"> </div>
 				</div>
 			</div>
