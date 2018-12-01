@@ -15,7 +15,7 @@ public class LoginFarmer {
 		return FPassword;
 	}
 	public void setFPassword(String lPassword) {
-		FPassword = lPassword;
+		FPassword =MD5.getMd5(lPassword);
 	}
 
 

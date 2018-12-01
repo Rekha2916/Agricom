@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.ResultSetExtractor;
 
 import com.farm.model.FarmFarmer;
+import com.farm.model.FarmTrader;
 import com.farm.model.FarmerCrop;
 
 public class AdminDaoImplement {
@@ -70,6 +71,24 @@ public class AdminDaoImplement {
 					f.setFName(rs.getString(2));;
 					f.setFEmail(rs.getString(3));;
 					f.setFMobile(rs.getLong(4));;
+				
+					list.add(f);  
+				}  
+				return list;  
+			}  
+		});
+	}
+	
+	public List<FarmTrader> getTraders(){    
+		return jdbcTemplate.query( "select * from g3_trad_details ", new ResultSetExtractor<List<FarmTrader>>(){  
+			public List<FarmTrader> extractData(ResultSet rs) throws SQLException, DataAccessException {    
+				List<FarmTrader> list=new ArrayList<FarmTrader>();  
+				while(rs.next()){  
+					FarmTrader f=new FarmTrader();
+					f.setId(rs.getInt(1));
+					f.setTName(rs.getString(2));;
+					f.setTEmail(rs.getString(3));;
+					f.setTMobile(rs.getLong(4));;
 				
 					list.add(f);  
 				}  

@@ -86,11 +86,11 @@ function hideURLbar(){ window.scrollTo(0,1); }
 					<div class="menu">
                          <a class="toggleMenu" href="#"><img src="images/menu-icon.png" alt="" /> </a>
 							<ul class="nav" id="nav">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About Us</a></li>
+							<li><a href="index.jsp">Home</a></li>
+							<li><a href="index.jsp">About Us</a></li>
 							
 						
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="index.jsp">Contact</a></li>
 							
 							</ul>
 

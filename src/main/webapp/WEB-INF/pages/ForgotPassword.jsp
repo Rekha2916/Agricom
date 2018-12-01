@@ -49,7 +49,7 @@ $(".glyphicon-eye-open").on("click", function() {
 	<!--End-header-->
 <div class="container-fluid" >
 	<div class="container card form_container"	style="display: flex; justify-content: center; align-items: center; ">
-		<form class="form" action="SubmitLoginF" method=post
+		<form class="form" action="forgotProcess" method="post"
 			style="padding-top: 40px;">
 			<div class="form-row" style="width: 550px">
 				<div class="form-group col-md-12">
@@ -57,12 +57,23 @@ $(".glyphicon-eye-open").on("click", function() {
 						class="form-control" name="FEmail"
 						placeholder="example@example.com" required>
 				</div>
+				<div class="form-group col-md-12">
+					<label for="inputEmail4">New Password</label> <input type="password"
+						class="form-control" name="FPassword"
+				 required>
+				</div>
+				<div class="form-group col-md-12">
+					<label for="inputEmail4">Confirm Password</label> <input type="password"
+						class="form-control" name="CPassword"
+					 required>
+				</div>
+				
 
 	
 
 			<div class="form-group col-md-12">
-				<button type="submit" class="btn btn-primary"
-					style="width: 100%; align-items: center;">Submit</button>
+				<input type="submit"  value="Submit" class="btn btn-primary"
+					style="width: 100%; align-items: center;">
 			</div>
 			
 

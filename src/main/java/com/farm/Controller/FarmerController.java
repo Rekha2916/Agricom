@@ -97,6 +97,15 @@ public class FarmerController {
 		return new ModelAndView("ForgotPassword");
 
 	}
+	@RequestMapping(value = "/forgotProcess", method = RequestMethod.POST)
+	public ModelAndView ForgetProcess(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("login") LoginFarmer l) {
+		ModelAndView mav = null;
+		int user =fdao.fogetUser(l);
+			mav = new ModelAndView("LoginFarmer");
+						
+			return mav;
+		
+	}
 	
 	
 }

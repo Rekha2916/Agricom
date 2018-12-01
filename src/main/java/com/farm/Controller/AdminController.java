@@ -19,6 +19,7 @@ import com.farm.dao.AdminDaoImplement;
 import com.farm.dao.CropDaoImplement;
 import com.farm.model.AdminLogin;
 import com.farm.model.FarmFarmer;
+import com.farm.model.FarmTrader;
 import com.farm.model.FarmerCrop;
 
 @Controller
@@ -55,6 +56,15 @@ public class AdminController {
 		list=adao.getFarmers();
 		ModelAndView map = new ModelAndView("FarmerList");
 		map.addObject("farmers",list);
+		return map;
+	}
+	
+	@RequestMapping("/viewtrader")					//Admin views farmer list
+	public ModelAndView traderList(){
+		List<FarmTrader> list= new LinkedList<FarmTrader>();
+		list=adao.getTraders();
+		ModelAndView map = new ModelAndView("TraderList");
+		map.addObject("traders",list);
 		return map;
 	}
 

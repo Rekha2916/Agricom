@@ -23,7 +23,7 @@ public class LoginTrader {
 	}
 
 	public void setTPassword(String tPassword) {
-		TPassword = tPassword;
+		TPassword = MD5.getMd5(tPassword);
 	}
 
 }

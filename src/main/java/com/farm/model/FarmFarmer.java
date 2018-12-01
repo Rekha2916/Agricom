@@ -38,6 +38,6 @@ public class FarmFarmer {
 		return FPassword;
 	}
 	public void setFPassword(String fPassword) {
-		FPassword = fPassword;
+		FPassword = MD5.getMd5(fPassword);
 	}
 }

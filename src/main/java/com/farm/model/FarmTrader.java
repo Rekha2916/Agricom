@@ -40,7 +40,7 @@ public class FarmTrader {
 		return TPassword;
 	}
 	public void setTPassword(String tPassword) {
-		TPassword = tPassword;
+		TPassword =MD5.getMd5(tPassword);
 	}
 
 

@@ -37,6 +37,13 @@ public class FarmDaoImplement implements IFarmerDao {
 
 	    return list.size() > 0 ? list.get(0) : null;
 	    }
+	public int fogetUser(LoginFarmer l) {
+		// TODO Auto-generated method stub
+		String query="update g3_farm_details set FPassword='"+ l.getFPassword()+"' where FEmail='"+l.getFEmail()+"'";
+		return jdbcTemplate.update(query);
+		
+	
+	}
 }
 
 //rowmapper class for farmer

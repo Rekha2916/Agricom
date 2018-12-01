@@ -4787,14 +4787,15 @@ textarea.input-group-sm>.input-group-btn>.btn {
 }
 
 .nav {
-    padding-left: 0;
+    padding-left:0;
     margin-bottom: 0;
+    
     list-style: none
 }
 
 .nav>li {
-    position: relative;
-    display: block
+    position:fixed;
+    display:none;
 }
 
 .nav>li>a {
@@ -4844,7 +4845,7 @@ textarea.input-group-sm>.input-group-btn>.btn {
 }
 
 .nav-tabs>li {
-    float: left;
+    float: right;
     margin-bottom: -1px
 }
 
@@ -4888,13 +4889,13 @@ textarea.input-group-sm>.input-group-btn>.btn {
     left: auto
 }
 
-@media (min-width:768px) {
+@media (min-width:1200px) {
     .nav-tabs.nav-justified>li {
         display: table-cell;
         width: 1%
     }
     .nav-tabs.nav-justified>li>a {
-        margin-bottom: 0
+        margin-bottom: 0;
     }
 }
 

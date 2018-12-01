@@ -3008,12 +3008,12 @@ input[type="button"].btn-block {
   outline: 0;
 }
 .dropdown-menu {
-  position: absolute;
+  position:relative;;
   top: 100%;
   left: 0;
   z-index: 1000;
   display: none;
-  float: left;
+  float: right;
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0;
@@ -3034,17 +3034,17 @@ input[type="button"].btn-block {
 .dropdown-menu .divider {
   height: 1px;
   margin: 9px 0;
-  overflow: hidden;
+  overflow: visible;
   background-color: #e5e5e5;
 }
 .dropdown-menu > li > a {
   display: block;
-  padding: 3px 20px;
+  padding: 10px 45px;
   clear: both;
   font-weight: normal;
   line-height: 1.42857143;
   color: #333;
-  white-space: nowrap;
+  white-space: normal;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
@@ -3080,11 +3080,11 @@ input[type="button"].btn-block {
   outline: 0;
 }
 .dropdown-menu-right {
-  right: 0;
+  right: auto;
   left: auto;
 }
 .dropdown-menu-left {
-  right: auto;
+  right: inherit;
   left: 0;
 }
 .dropdown-header {
