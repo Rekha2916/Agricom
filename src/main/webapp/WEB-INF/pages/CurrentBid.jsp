@@ -4,41 +4,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AGRICOM</title>
+<title>PLACE BID</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript">
-
-</script>
-<script src="resources/js/jquery-1.11.0.min.js"></script>
-<link href="resources/css/bootstrap.css" rel='stylesheet' type='text/css' />
-<link href="resources/css/style.css" rel='stylesheet' type='text/css' />
-<link href="resources/css/css.css" rel='stylesheet' type='text/css' />
-<link href="resources/css/agri.css" rel='stylesheet' type='text/css' />
-<link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> 
+		addEventListener("load", function() 
+			{ setTimeout(hideURLbar, 0); }, false); 
+		function hideURLbar(){ window.scrollTo(0,1); } 
+	</script>
+<script src="js/jquery-1.11.0.min.js"></script>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<link href="css/css.css" rel='stylesheet' type='text/css' />
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link
+	href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic'
+	rel='stylesheet' type='text/css'>
+<link href="css/popup-box.css" rel="stylesheet" type="text/css"
+	media="all" />
 </head>
 <style>
 h4 {
 	position: absolute;
-	left: 310px;
+	left: 314px;
 	top: 64px;
 }
 </style>
 <script type="text/javascript">
-	function start() {
-		var timer = 10, minutes, seconds;
-		setInterval(
-				function() {
-					minutes = parseInt(timer / 60, 10);
-					seconds = parseInt(timer % 60, 10);
-					if (--timer < 0) {
-						alert("Bidding time is up!");
-						window.location.href = "http://localhost:8182/Agricom/bidResult";
-					}
-				}, 1000);
+	function validate() {
+
+		var baseprice = document.getElementById("cBasePrice").value;
+		var sellprice = document.getElementById("cSellPrice").value;
+		var bidamount = document.getElementById("bidAmount").value;
+		if (bidamount < sellprice || bidamount<baseprice) {
+			alert("Please enter Bid Amount greater than base price and selling price");
+
+			return false;
+
+		} 
+		return true;
 	}
+	/* function start(){
+		setInterval(function(){
+			var cID=document.getElementById("cID");
+			//var obj=JSON.stringify({cID:cID});
+			var url='/getBidDeet/${cID}';
+			$.ajax({
+				url:url,
+				method: 'POST',
+				cache: false,
+				async: true,
+				data: obj,
+				dataType: 'text',
+				contentType: 'application/json; charset=utf-8',
+				success: display(this)
+			});
+		},1000);
+		}
+		function display(){
+			var nsell=document.getElementById("cSellPrice").value;
+			alert(nsell);
+		} */
+	/* $(document).ready(function retreiveSellPrice(){
+		var cID=document.getElementById("cID");
+		$.ajax({
+			url: 'http://localhost:8182/Agricom/getBidDetails/'+cID,
+			success: function(data){
+				console.log("abc");
+				('#display').text(data);
+			},
+			complete: function(){
+				setTimeout(retreiveSellPrice(), 5000);
+			}
+		});
+	}); */
 </script>
-<body onload="start();">
+<body>
 	<!--start-header-->
+	<% response.setIntHeader("Refresh", 10); %>
 	<div id="home" class="header">
 		<div class="top-header">
 			<div class="container">
@@ -58,10 +101,8 @@ h4 {
 			</div>
 		</div>
 		<!---pop-up-box---->
-		<script type="text/javascript" src="resources/js/modernizr.custom.min.js"></script>
-		<link href="resources/css/popup-box.css" rel="stylesheet" type="text/css"
-			media="all" />
-		<script src="resources/js/jquery.magnific-popup.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/modernizr.custom.min.js"></script>
+		<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
 		<!---//pop-up-box---->
 		<div id="small-dialog" class="mfp-hide">
 			<div class="login">
@@ -85,31 +126,35 @@ h4 {
 				</ul>
 
 				<!----start-top-nav-script---->
-				<script type="text/javascript" src="resources/js/responsive-nav.js"></script>
+				<script type="text/javascript" src="js/responsive-nav.js"></script>
 				<script type="text/javascript">
-					jQuery(document).ready(function($) {
-						$(".scroll").click(function(event) {
-							event.preventDefault();
-							$('html,body').animate({
-								scrollTop : $(this.hash).offset().top
-							}, 1000);
-						});
-					});
-				</script>
+							jQuery(document).ready(function($) {
+								$(".scroll").click(function(event){     
+									event.preventDefault();
+									$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+								});
+							});
+						</script>
 				<!----//End-top-nav-script---->
 			</div>
+
+			<div class="clearfix"></div>
 		</div>
 	</div>
 
-	<div class="cont"
-		style="display: flex; justify-content: left; align-items: left;width="50%">
-		<form action="submitBid">
-			<table class="tab" style="table-layout: fixed; width: 200px">
-			 <c:forEach var="crop" items="${view}">   
+	<div class="list"
+		style="display: flex; justify-content: left; align-items: left;width=50%">
+		<form name="DispForm" action="submitBid">
+			<!-- onsubmit="return validate()" >-->
+			<table class="table" style="table-layout: fixed; width: 200px">
 				<tr>
 					<td>Crop Type</td>
 					<td><input type="text" value=${crop.getcType() } name="cType"
 						readonly></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="hidden" value=${crop.getcID() }
+						name="cID" readonly></td>
 				</tr>
 				<tr>
 					<td>Crop Name</td>
@@ -119,35 +164,39 @@ h4 {
 				<tr>
 					<td>Quantity</td>
 					<td><input type="text" value=${crop.getcQuantity()
-						}
+								}
 						name="cQuantity" readonly></td>
-					
 				</tr>
 				<tr>
 					<td>Base Price</td>
 					<td><input type="text" value=${crop.getcBasePrice()
-						}
+								}
 						name="cBasePrice" readonly></td>
 				</tr>
 				<tr>
 					<td>Sell Price</td>
-					<td><input type="text" value=${crop.getcSellPrice()
-						}
-						name="cSellPrice" readonly></td>
+					<td><input type="text" 
+						name="cSellPrice"  value=${crop.cSellPrice } id="display" readonly></td>
 				</tr>
 				<tr>
 					<td>Bid Amount</td>
-					<td><input type="number" name="bidAmount"></td>
+					<td><input type="number" name="bidAmount" required></td>
 				</tr>
-				 </c:forEach> 
+				<tr>
+					<td colspan="2"><input type="submit" class="btn btn-primary"
+						style="align-items: center" value="Place Bid"></td>
+				</tr>
 			</table>
-			
-
-			<input type="submit" class="btn btn-primary"
-				style="align-items: center" value="Bid">
-
 		</form>
-	</div>
+		<div class="unit">
+			<h4>in Quintals</h4>
+		</div>
+		<!-- <form action="submitBid">
+
+						<button type="submit" class="btn btn-primary"
+						style="align-items: center">Place Bid</button>
+
+					</form> -->
 	</div>
 </body>
 </html>
