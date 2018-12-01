@@ -61,8 +61,7 @@ $(document).ready(function() {
 							<!--start-top-nav-->
 							 <div class="top-nav">
 								<ul>
-								<li class="active"><a class="play-icon popup-with-zoom-anim" href="logout">Logout</a></li>	
-								</ul>
+<a class="play-icon popup-with-zoom-anim" href="Logout.jsp" onclick="alert('Are you sure to logout?')">								</ul>
 							</div>
 							
                             <div class="clearfix"> </div>

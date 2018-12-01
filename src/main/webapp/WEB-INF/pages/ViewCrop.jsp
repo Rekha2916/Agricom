@@ -47,8 +47,7 @@ td, th {
 							 <div class="top-nav">
 								<ul>
 								
-							<li class="active"><a class="play-icon popup-with-zoom-anim" href="logout" onclick="alert('Are you sure to logout?')">LOGOUT</a></li>	
-								</ul>
+	<li class="active"><a class="play-icon popup-with-zoom-anim" href="Logout.jsp" onclick="alert('Are you sure to logout?')">LOGOUT</a></li>									</ul>
 							</div>
 							
 <div class="clearfix"> </div>

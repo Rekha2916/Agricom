@@ -74,7 +74,7 @@ public class CropDaoImplement {
 	
  // get details of crop currently on bidding schedule
 	public List<FarmerCrop> getBidCrops(){    
-		return jdbcTemplate.query( "select * from g3_crops where cRequestStatus=0 and rownum=1 order by cId desc", new ResultSetExtractor<List<FarmerCrop>>(){  
+		return jdbcTemplate.query( "select * from g3_crops where cRequestStatus=1 and rownum=1 order by cId desc", new ResultSetExtractor<List<FarmerCrop>>(){  
 			public List<FarmerCrop> extractData(ResultSet rs) throws SQLException, DataAccessException {    
 				List<FarmerCrop> list=new ArrayList<FarmerCrop>();  
 				while(rs.next()){  

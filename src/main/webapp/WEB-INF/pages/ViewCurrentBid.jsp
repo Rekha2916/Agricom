@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<!-- <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
-     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>   
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>    --> 
 <!DOCTYPE html>
 <html>
 <head>
-<title>AGRICOM</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">    
+<title>VIEW CURRENT BID</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">	
 <script type="application/x-javascript"> 
 addEventListener("load", function() 
 { setTimeout(hideURLbar, 0); }, false); 
@@ -16,11 +16,15 @@ function hideURLbar(){ window.scrollTo(0,1); }
 <link href="resources/css/style.css" rel='stylesheet' type='text/css' />
 <link href="resources/css/css.css" rel='stylesheet' type='text/css' />
 <link href="resources/css/agri.css" rel='stylesheet' type='text/css' />
-
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 <style>
+	table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+/* Zebra striping */
 tr:nth-of-type(odd) { 
-  background: #eee; 
+  background: gray; 
 }
 th { 
   background: #333; 
@@ -28,45 +32,49 @@ th {
   font-weight: bold; 
 }
 td, th { 
-  padding: 6px; 
+  padding: 10px; 
   border: 1px solid #ccc; 
   text-align: left; 
 }
 
 </style>
+<!-- <script type="text/javascript">
+$(document).ready(function() {
+	$('#textbox').click(function() {
+		$('#textbox').animate({
+		'marginLeft' : "+=400px" //moves right
+		});
+	});
+		});
+</script> -->
+
 </head>
 <body>
+	
 	<!--start-header-->
 			<div id="home" class="header">
 					<div class="top-header">
 						<div class="container">
 							<div class="logo">
-									<a href="index.html"><img src="images/logo.png" alt=""></a>
+								<a href="index.html"></a>  
 							</div>
-<!--start-top-nav-->
+							<!--start-top-nav-->
 							 <div class="top-nav">
 								<ul>
-								
-	<li class="active"><a class="play-icon popup-with-zoom-anim" href="Logout.jsp" onclick="alert('Are you sure to logout?')">LOGOUT</a></li>									</ul>
-							</div>
-							
-<div class="clearfix"> </div>
-							
-
+	<li class="active"><a class="play-icon popup-with-zoom-anim" href="Logout.jsp" onclick="alert('Are you sure to logout?')">LOGOUT</a></li>								</div>
+							</ul>
+                            <div class="clearfix"> </div>
 							
 						</div>
 				</div>
-
 			
 					
-		
-			
+
                          <a class="toggleMenu" href="#"><img src="resources/images/menu-icon.png" alt="" /> </a>
 							<ul class="nav" id="nav">
-							
+						
 							<li><a href="back"><button id="b" type="submit" class="btn btn-primary"
-							style="align-items: center" width="50%">Back</button></a></li>
-							
+							style="align-items: center;top: 110%" width="50%">Back</button></a></li>
 							</ul>
 
                             <!----start-top-nav-script---->
@@ -82,13 +90,12 @@ td, th {
 							<!----//End-top-nav-script---->
 					</div>
 					
-					<div class="clearfix"></div>
-				
-		</div>
-	</div>
+					<div class="clearfix"> </div>
+					</div>
+					</div>
 	
-<div class="cont" style="display: flex; justify-content: center; align-items: center;width="50%">
-
+	
+	<div class="cont" style="display: flex; justify-content: center; align-items: center;width="20%">
 		<table id="disp" class="table"style="width:700px" >
 
 <!-- 	<table style="display: flex; justify-content: center; align-items: center;" width="100%" height="50%">
@@ -99,24 +106,20 @@ td, th {
     <th>Quantity</th>
     <th>Base Price</th>
     <th>Sold Price</th>
-    <th>Accept</th>
+  
   </tr>
-  <c:forEach var="crop" items="${crops}">   
+  <c:forEach var="crop" items="${view}">   
    <tr>
 
-     	<td><c:out value= "${crop.getcId()}" /></td>
- 	    <td><c:out value="${crop.getcType()}" /></td>
-        <td><c:out value="${crop.getcName()}" /></td>
-        <td><c:out value="${crop.getcQuantity()}" /></td>
-        <td><c:out value="${crop.getcBasePrice()}" /></td>
-        <td><c:out value="${crop.getcSellPrice()} "/></td>
-        <td><a href="accept/${crop.cId }">Accept</a></td>
-      
+     <td><input type="text" value="${crop.getcId()}" name="cId" readonly></td>
+ 	    <td><input type="text" value="${crop.getcType()}" name="cType" readonly></td>
+        <td><input type="text" value="${crop.getcName()}" name="cName" readonly></td>
+        <td><input type="text" value="${crop.getcQuantity()}" name="cQuantity" readonly></td>
+        <td><input type="text" value="${crop.getcBasePrice()}" name="cBasePrice" readonly></td>
+        <td><input type="text" value="${crop.getcSellPrice()}" name="cSellPrice" readonly></td>
+
     </tr>
-<!--     <a href="accept"><button id="b" type="submit" class="btn btn-primary" style="align-items: center">Accept</button></a>
- -->      
     </c:forEach> 
-    
 </table>
 </div>
 </body>

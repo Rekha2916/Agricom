@@ -33,8 +33,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
 				<!--start-top-nav-->
 				<div class="top-nav">
 					<ul>
-						<li class="active"><a class="play-icon popup-with-zoom-anim" href="logout" onclick="alert('Are you sure to logout?')">LOGOUT</a></li>	
-
+<a class="play-icon popup-with-zoom-anim" href="Logout.jsp" onclick="alert('Are you sure to logout?')">
 					</ul>
 				</div>
 

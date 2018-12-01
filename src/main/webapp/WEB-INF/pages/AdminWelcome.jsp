@@ -45,7 +45,7 @@ pageEncoding="ISO-8859-1" isELIgnored="false"%>
 						<li><a href="viewfarmer"><button id="pr" type="submit" class="btn btn-primary"style="align-items: center" width="50%">View Farmers</button></a></li>
 							
 							<li><a href="viewtrader"><button id="i" type="submit" class="btn btn-primary"style="align-items: center" width="50%">View Traders</button></a></li>
-				<li><button id="b" type="submit" class="btn btn-primary"style="align-items: center" width="50%">View Current Bid</button></li>
+				<li><a href="viewcurrentbid"><button id="b" type="submit" class="btn btn-primary"style="align-items: center" width="50%">View Current Bid</button></a></li>
 						<li><a href="viewcropreq"><button id="b" type="submit" class="btn btn-primary"style="align-items: center" width="50%">View Crop Request</button></a></li>
 							
 				</ul>

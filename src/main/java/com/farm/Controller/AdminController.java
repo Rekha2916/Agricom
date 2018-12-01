@@ -83,7 +83,18 @@ public class AdminController {
 		return map;
 		}
 	}
-	
+	@RequestMapping("/viewcurrentbid")
+	public ModelAndView viewCurrentBid()
+	{
+		System.out.println("test....");
+		 List<FarmerCrop> list= new LinkedList<FarmerCrop>();
+	        list=cdao.getBidCrops();  
+	        ModelAndView map = new ModelAndView("ViewCurrentBid");
+	        map.addObject("view",list);
+	        System.out.println("test");
+	        return map;
+
+	}
 	@RequestMapping("/accept/{cId}")
 	public ModelAndView adminaccept(HttpServletRequest request, HttpServletResponse response, @PathVariable int cId)
 	{
