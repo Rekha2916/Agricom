@@ -46,7 +46,7 @@ if(session==null)
 					<div class="top-header">
 						<div class="container">
 							<div class="logo">
-								<a href="index.html"><img src="images/logo.png" alt=""></a>  
+								<a href="index.html"><img style="border-radius: 25pt;"src="images/logo.png" alt="" width="40" height="100"></a>  
 							</div>
 							<!--start-top-nav-->
 							 <div class="top-nav">
@@ -74,7 +74,7 @@ if(session==null)
 							<form class="form" method="post" action="LoginTrader">
 								<button type="submit" class="btn btn-primary btn-block">Trader</button>
 							</form>
-					<a href="AdminWelcome">Admin</a>
+					<p align="right"><a href="AdminWelcome">Admin</a></p>
 						</div>
 					</div>
 					<div id="small-dialog1" class="mfp-hide">

@@ -86,10 +86,11 @@ function hideURLbar(){ window.scrollTo(0,1); }
 		</div>
 	</div>
 
-	<div class="container card form_container" style="display: flex; justify-content: center; align-items: center;">
+	<div class="container card form_container" style="display: flex; justify-content: center; align-items: center;background-image: url('resources/images/images.jfif');background-size:  100%; width: 100%">
 		<form class="form" action="SubmitCropRequest" method="post" style="padding-top: 40px;">
 			<div class="form-row" style="width: 550px">
-				<h4>Crop Request Details</h4>
+			<br>
+				<h4 align="center" style="font-weight: bold;">CROP REQUEST FORM</h4>
 				<div class="form-group col-md-12">
 					<br>
 					<label for="inputCropType">Crop Type</label> <input type="text"
@@ -113,7 +114,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
 					<br>
 					<label for="inputQuantity">Quantity</label> <input type="number"
 						class="form-control" name="cQuantity" placeholder="Enter quantity"
-						pattern="[0-9]" required>
+						pattern="[0-9]" min=1  required>
 				</div>
 		
 			 <div class="form-group col-md-12">
@@ -121,13 +122,15 @@ function hideURLbar(){ window.scrollTo(0,1); }
 		
 				<label for="inputQuantity">Base Price</label> <input type="number"
 					class="form-control" name="cBasePrice"
-					placeholder="Enter base Price" pattern="[0-9]" required>
+					placeholder="Enter base Price" pattern="[0-9]" min=1 required>
 					
 					
 				
 			</div> 
-			<div class="form-group col-md-12"></div>
-		 <button type="submit" class="btn btn-primary">Place Request</button>
+			<div class="form-group col-md-12">
+			<br>
+		 <button type="submit" class="btn btn-primary" style="width: 100%; align-items: center;">Place Request</button>
+		 </div>
 		 </div>
 			</form>
 			</div>

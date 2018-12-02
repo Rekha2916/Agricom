@@ -87,10 +87,50 @@ if(session==null)
 					
 		</div>
 	</div>
-	<div class="cont" style="display: flex;display: none; justify-content: center; align-items: center;width="50%">
-	<p> <a href="viewBidSchedule">Crop bidding schedule</a></p>
-	<p> <a href="placeBid">Bid for current crop</a></p>
+	
+	<div style="display: flex; justify-content: center ;align-items: center; background-image: url('resources/images/images.jfif'); background-size: 100%; width: 100%">
+	<div class="cont"  style="display: none;">
+	
+	<br><br>
+	<form class="form" method="post" action="viewbidschedule">
+	<div class="form-row" style="width: 550px">
+	<div class="form-group col-md-12">
+<button type="submit" class="btn btn-primary btn-block" style="width: 100%; align-items: center;">View Bid Schedule</button><br>
+</div>
+</div>
+							</form>
+	<br><br>
+	<form class="form" method="post" action="placeBid">
+	<div class="form-row" style="width: 550px">
+	<div class="form-group col-md-12">
+<button type="submit" class="btn btn-primary btn-block" style="width: 100%; align-items: center;">Current Bid</button><br>
+</div>
+</div>
+							</form>
+	
+							<div class="form-group col-md-12">
+												<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"></span></a>
+							</div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							
+							
    </div>
+    
+   </div>
+	
 	
 	
 </body>

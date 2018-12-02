@@ -4,7 +4,7 @@ pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+<title>AGRICOM</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
 	<script type="application/x-javascript"> 
 		addEventListener("load", function() 
@@ -24,7 +24,7 @@ pageEncoding="ISO-8859-1" isELIgnored="false"%>
 		<div class="top-header">
 			<div class="container">
 				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" alt=""></a>  
+					<a href="index.html"><img src="resources/images/logo.png" alt=""></a>  
 				</div>
 				<!--start-top-nav-->
 				<div class="top-nav">

@@ -28,7 +28,7 @@ public class FarmerController {
 	}
 
 	//login mapping
-	@RequestMapping("/login")
+	@RequestMapping("/loginF")
 	public ModelAndView login( ) 
 	{
 

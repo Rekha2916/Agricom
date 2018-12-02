@@ -19,6 +19,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
 					<script src="resources/js/jquery.magnific-popup.js" type="text/javascript"></script>
 					<!---//pop-up-box---->
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 	<!--start-header-->
@@ -26,7 +27,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
 					<div class="top-header">
 						<div class="container">
 							<div class="logo">
-								<a href="index.html"><img src="images/logo.png" alt=""></a>  
+								<a href="index.html"><img style="border-radius: 25pt;"src="images/logo.png" alt="" width="40" height="100"></a>  
 							</div>
 							<!--start-top-nav-->
 							 <div class="top-nav">
@@ -57,10 +58,10 @@ function hideURLbar(){ window.scrollTo(0,1); }
 						<div class="signup">
 							<h3>Sign Up</h3>
 							
-							<form class="form" method="post" action="farmerReg">
+							<form class="form" method="post" action="SignupFarmer">
 								<button type="submit" class="btn btn-primary btn-block">Farmer</button><br>
 							</form>
-							<form class="form" method="post" action="traderReg">
+							<form class="form" method="post" action="SignupTrader">
 								<button type="submit" class="btn btn-primary btn-block">Trader</button>
 							</form>
 						</div>
@@ -137,20 +138,20 @@ function hideURLbar(){ window.scrollTo(0,1); }
 			  
 			    <div class="form-group col-md-12">
 			    <div class="form-check">
-			      <p>Already a user? Skip to <a class="login_ref" href="login" id="checkuser">Login</a></p>
+			      <p>Already a user? Skip to <a class="login_ref" href="loginF" id="checkuser">Login</a></p>
 			     
 			     
 			    </div>
 			  </div>
 			</form>	
-			<div class="footer">
-                         <div class="container">
+			
+                        
                             
 				
                          </div>
 					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"></span></a>
-     </div>
-		</div>
+     
+		
 		
 </body>
  

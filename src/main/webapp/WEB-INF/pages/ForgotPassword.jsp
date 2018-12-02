@@ -81,5 +81,15 @@ $(".glyphicon-eye-open").on("click", function() {
 	</form>
 	</div>
 	</div>
+	<div class="footer">
+                         <div class="container">
+                                    <div class="footer-text">
+								<p>Website Content Managed by Department of Agriculture & Farmers  Cooperation </br>
+Designed, Developed and Hosted by Agricom Development Center (ADC)
+</p>	
+				    </div>
+                         </div>
+					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"></span></a>
+     </div>
 </body>
 </html>

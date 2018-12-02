@@ -28,6 +28,13 @@ public class TraderController {
 		return new ModelAndView("SignupTrader");
 		
 	}
+	@RequestMapping("/loginT")
+	public ModelAndView login( ) 
+	{
+
+		return new ModelAndView("LoginTrader");
+
+	}
 	// mapping for login form
 	@RequestMapping(value="/LoginTrader",method=RequestMethod.POST)
 	public ModelAndView loginTrader( ) 

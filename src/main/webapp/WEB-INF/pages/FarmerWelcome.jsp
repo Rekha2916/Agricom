@@ -27,6 +27,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+
 <%
 response.setHeader("Cache-Control","no-cache,no-store, must-revalidate"); 
 if(session!=null)
@@ -63,7 +64,7 @@ if(session!=null)
 					
 		<div class="navgation">
 					<div class="menu">
-                         <a class="toggleMenu" href="#"><img src="images/menu-icon.png" alt="" /> </a>
+                         <a class="toggleMenu" href="#"><img src="resources/images/menu-icon.png" alt="" /> </a>
 							<ul class="nav" id="nav">
 							
 						<li><button id="pr" type="submit" class="btn btn-primary"style="align-items: center" width="50%"><%=session.getAttribute("user") %></li>
@@ -85,20 +86,61 @@ if(session!=null)
 							</script>
 							<!----//End-top-nav-script---->
 					</div>
-					
+					<div class="clearfix"> </div>
 					
 		</div>
+		<div class="container card form_container" style="display: flex; justify-content: center; align-items: center;background-image: url('resources/images/images.jfif');background-size:  100%; width: 100%">
 	</div>
-	<div style="display: flex; justify-content: center ;align-items: center">
-	<div class="cont"  style="display: none;">
-	<pre>
+	</div>
 	
-	<p> <a href="placerequest">Place Crop Sell Request</a></p>
-	<p> <a href="viewcrophistory">View Crop History</a></p>
-	<p> <a href="viewmarketplace">View Marketplace</a></p>
-	</pre>
+	<div style="display: flex; justify-content: center ;align-items: center; background-image: url('resources/images/images.jfif'); background-size: 100%; width: 100%">
+	<div class="cont"  style="display: none;">
+	
+	<br><br>
+	<form class="form" method="post" action="placesellrequest">
+	<div class="form-row" style="width: 550px">
+	<div class="form-group col-md-12">
+<button type="submit" class="btn btn-primary btn-block" style="width: 100%; align-items: center;">Place Sell Request</button><br>
+</div>
+</div>
+							</form>
+	<br><br>
+	<form class="form" method="post" action="viewcrophistory">
+	<div class="form-row" style="width: 550px">
+	<div class="form-group col-md-12">
+<button type="submit" class="btn btn-primary btn-block" style="width: 100%; align-items: center;">View Crop History</button><br>
+</div>
+</div>
+							</form>
+	<br><br>
+	<form class="form" method="post" action="viewmarketplace">
+	<div class="form-row" style="width: 550px">
+	<div class="form-group col-md-12">
+<button type="submit" class="btn btn-primary btn-block" style="width: 100%; align-items: center;">View Market Place </button><br>
+</div>
+</div>
+
+							</form>
+							
+								<p>Website Content Managed by Department of Agriculture & Farmers  Cooperation </br>
+Designed, Developed and Hosted by Agricom Development Center (ADC)
+
+</p>	
+				    
+							<div class="form-group col-md-12">
+												<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"></span></a>
+							</div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							<div class="form-group col-md-12"></div>
+							
    </div>
-   
+    
    </div>
 	
 	

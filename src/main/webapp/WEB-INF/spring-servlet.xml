@@ -25,7 +25,7 @@
 		<property name="url"
 			value="jdbc:oracle:thin:@localhost:1521:xe" />
 		<property name="username" value="system" />
-		<property name="password" value="Newuser123" />
+		<property name="password" value="root" />
 	</bean>
 
 	<bean id="jdbcTemplate"

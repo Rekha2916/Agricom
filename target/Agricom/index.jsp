@@ -21,8 +21,26 @@ function hideURLbar(){ window.scrollTo(0,1); }
 <link href="resources/css/popup-box.css" rel="stylesheet" type="text/css" media="all"/>
 <script src="resources/js/jquery.magnific-popup.js" type="text/javascript"></script>
 <link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<script type="text/javascript">
+history.pushState(null, null, location.href);
+window.onpopstate = function () {
+    history.go(1);
+};
+</script>
 </head>
 <body>
+<%
+response.setHeader("Cache-Control","no-cache,no-store, must-revalidate"); 
+if(session==null)
+{
+	if(session.getAttribute("user")==null)
+	{
+		response.sendRedirect("index.jsp");
+		
+	}
+	
+}
+%>
 	<!--start-header-->
 			<div id="home" class="header">
 					<div class="top-header">
@@ -56,6 +74,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
 							<form class="form" method="post" action="LoginTrader">
 								<button type="submit" class="btn btn-primary btn-block">Trader</button>
 							</form>
+					<a href="AdminWelcome">Admin</a>
 						</div>
 					</div>
 					<div id="small-dialog1" class="mfp-hide">
@@ -91,11 +110,11 @@ function hideURLbar(){ window.scrollTo(0,1); }
 					<div class="menu">
                          <a class="toggleMenu" href="#"><img src="images/menu-icon.png" alt="" /> </a>
 							<ul class="nav" id="nav">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About Us</a></li>
+							<li><a href="#">Home</a></li>
+							<li><a href="#about">About Us</a></li>
 							
 						
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="#contact">Contact</a></li>
 							
 							</ul>
 
@@ -123,7 +142,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
 				</div>
 			</div>
 		</div>
-		<div class="care">
+		<div  id="about" class="care">
 			<div class="container">
 				<div class="care-top">
 					<h3>ABOUT US</h3>
@@ -133,113 +152,92 @@ function hideURLbar(){ window.scrollTo(0,1); }
 					<div class="col-md-4 c-bottom">
 						<div class="care-bottom-left">
 							<img src="images/tree-2.png" alt="">
-							<h4>variations of passages</h4>
-							<p> which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+							<h4 style="color:black;">Department At A Glance</h4>
+							<p>Agriculture play a vital role in India’s economy. 54.6% of the population is engaged in agriculture and allied activities (census 2011) and it contributes 17.4% to the country’s Gross Value Added (current price 2014-15, 2011-12 series). Given the importance of agriculture sector, Government of India took several steps for its sustainable development</p>
 							</div>
 					</div>
 					<div class="col-md-4 c-bottom">
 						<div class="care-bottom-middle">
 							<img src="images/tree-1.png" alt="">
-							<h4>variations of passages</h4>
-							<p> which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+							<h4 style="color:black;">VARIATION OF STRUCTURE</h4>
+							<p>In view of the structural change in the economy, there has been a continuous decline in the share of agriculture and allied sector in the GVA from 18.5 per cent in 2011-12 to 17.4 percent in 2014-15 at current prices. A fall in the share of the agriculture and allied sector in GVA is an expected outcome in a fast growing and structurally changing economy.</p>
 							</div>
 					</div>
 					<div class="col-md-4 c-bottom">
 						<div class="care-bottom-right">
 							<img src="images/tree.png" alt="">
-							<h4>variations of passages</h4>
-							<p> which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+							<h4 style="color:black;">ORGANIZATION SETUP</h4>
+							<p >The A&DC is organized into 7 Divisions and has five attached offices and twenty-one subordinate offices which are spread across the country for coordination with state level agencies and implementation of Central Sector Schemes in their respective fields.Further, one Public Sector Undertakings  under the administrative control of the Department.</p>
 							</div>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 			</div>
 		</div>
-		<div class="news">
+	
+				
+				
+					
+					
+					
+		<!--contact-starts-->
+		<div  id="contact" class="contact">
 			<div class="container">
-				<div class="news-top">
-					<h3>GUIDLINES</h3>
+				<div class="contact-top">
+		
+					<h3>CONTACT US</h3>
+					<P>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</P>
 				</div>
-				<div class="news-bottom">
-					<div class="col-md-6 news-bottom-left">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox">
-									<img class="port-pic" class="img-responsive" src="images/one-2.jpg" />
-									<div class="b-wrapper">
-										<h2 class="b-animate b-from-left b-from   b-delay03 ">
-											<span>Sed in lacus ut enim adipiscing aliquet</span>
-											<button>View full article</button>
-										</h2>
-									</div>
-								</a>
-					</div>
-					<div class="col-md-6 news-bottom-left">
-						<div class="news-btm">
-							<a href="single.html" class="b-link-stripe b-animate-go  thickbox">
-									<img class="port-pic" src="images/apple.jpg" />
-									<div class="b-wrapper">
-										<h2 class="b-animate b-from-left    b-delay03 ">
-											<button>View full article</button>
-										</h2>
-									</div>
-								</a>
+				<div class="contact-bottom">
+					<div class="contact-bottom-top">
+						
+						<div class="col-md-12 contact-top-left">
+							<div class=" col-md-4 contact-top-one">
+								<h4>ADDRESS:</h4>
+									<h6>Agriculture & Farmers Coorporation
+									<span>Mumbai,</span>
+										CD-Road,India.
+									</h6>
+							</div>
+							<div class=" col-md-4 contact-top-one">
+								<h4>PHONES:</h4>
+									<p>Telephone: +1 234 567 9871
+									<span>FAX: +1 234 567 9871</span>
+									</p>
+							</div>
+							<div class=" col-md-4 contact-top-one">
+								<h4>E-MAIL:</h4>
+								<p><a href="#">ADC@agri.co</a></p>
+							</div>
 						</div>
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox">
-									<img class="port-pic" src="images/veg.jpg" />
-									<div class="b-wrapper">
-										<h2 class="b-animate b-from-left    b-delay03 ">
-											<button>View full article</button>
-										</h2>
-									</div>
-								</a>
+						<div class=" col-md-12 contact-bottom-bottom">
+						
+						<div class=" contact-text">
+							<input type="text" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}"/>
+							<input type="text" value="Second Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Second Name';}"/>
+							<input type="text" value="Email Id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Id';}"/>
+						</div>
+						<div class="contact-textarea">
+							<textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message..</textarea>
+						</div>
+						<div class="contact-but">
+							<input type="submit" value="submit" onclick="alert('Thank you...'')" />
+						</div>
 					</div>
-					<div class="clearfix"> </div>
-					<div class="news-btm1">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox">
-									<img class="port-pic" class="img-responsive" src="images/fd-btm1.jpg" />
-									<div class="b-wrapper">
-										<h2 class="b-animate b-from-left b-left   b-delay03 ">
-											<span>Sed in lacus ut enim adipiscing aliquet</span>
-											<button>View full article</button>
-										</h2>
-									</div>
-								</a>
-					</div>
-					<div class="fd-btn">
-						<a href="blog.html">More</a>
-					</div>
+	
 				</div>
 			</div>
 		</div>
-		<div class="contact">
-			<div class="container">
-				<div class="contact-main">
-					<div class="col-md-4 contact-left">
-						<h4>For Help center contact</h4>
-						<p><span>Email:</span><a href="mailto:@example.com">123agro@example.com</a></p>
-						<p><span>Phone:</span>+102 0000 0000</p>
 					</div>
-					<div class="col-md-4 contact-left">
-						<h4>Address</h4>
-						<p>agr center,georgia capetown Newyork</p>
-					</div>
-					<div class="col-md-4 contact-left">
-						<h4>Follow us</h4>
-						<ul>
-							<li><a href="#"><span class="fb"> </span></a></li>
-							<li><a href="#"><span class="twit"> </span></a></li>
-							<li><a href="#"><span class="in"> </span></a></li>
-							<li><a href="#"><span class="yt"> </span></a></li>
-						</ul>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
+					
+		<!--contact-end-->
 		
 		 <div class="footer">
                          <div class="container">
                                     <div class="footer-text">
-										
+								<p>Website Content Managed by Department of Agriculture & Farmers  Cooperation </br>
+Designed, Developed and Hosted by Agricom Development Center (ADC)
+</p>	
 				    </div>
                          </div>
 					<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"></span></a>

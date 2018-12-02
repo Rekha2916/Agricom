@@ -16,10 +16,28 @@ function hideURLbar(){ window.scrollTo(0,1); }
 <link href="resources/css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="resources/css/style.css" rel='stylesheet' type='text/css' />
 <link href="resources/css/css.css" rel='stylesheet' type='text/css' />
-<link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
+<link href='http://fonts.googleapis.com/css?family=Arimo:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<script>
+$(document).ready(function(){               
+    $("#b").click(function(){
+        $(".cont").show();
+    });
+});
+</script>
 </head>
 <body>
+<%
+response.setHeader("Cache-Control","no-cache,no-store, must-revalidate"); 
+if(session!=null)
+{
+	if(session.getAttribute("user")==null)
+	{
+		response.sendRedirect("index.jsp");
+	}
+	
+}
+%>
 	<!--start-header-->
 			<div id="home" class="header">
 					<div class="top-header">
@@ -31,7 +49,7 @@ function hideURLbar(){ window.scrollTo(0,1); }
 							 <div class="top-nav">
 								<ul>
 								
-								<li class="active"><a class="play-icon popup-with-zoom-anim" href="logout">LOGOUT</a></li>	
+								<li class="active"><a class="play-icon popup-with-zoom-anim" href="Logout.jsp" onclick="alert('Are you sure to logout?')">LOGOUT</a></li>	
 								</ul>
 							</div>
 							
@@ -48,16 +66,15 @@ function hideURLbar(){ window.scrollTo(0,1); }
                          <a class="toggleMenu" href="#"><img src="images/menu-icon.png" alt="" /> </a>
 							<ul class="nav" id="nav">
 							
-							<li><a href="profile.html">Profile</a></li>
-							<li><a href="insurance.html">Insurance</a></li>
+						<li><button id="pr" type="submit" class="btn btn-primary"style="align-items: center" width="50%"><%=session.getAttribute("user") %></li>
 							
-						
-							<li><a href="bidding.html">Bidding</a></li>
+							<li><button id="i" type="submit" class="btn btn-primary"style="align-items: center" width="50%">Insurance</a></li>
+							<li><button id="b" type="submit" class="btn btn-primary"style="align-items: center" width="50%">Bidding</button></li>
 							
 							</ul>
 
                             <!----start-top-nav-script---->
-		                     <script type="text/javascript" src="js/responsive-nav.js"></script>
+		                     <script type="text/javascript" src="resources/js/responsive-nav.js"></script>
 							<script type="text/javascript">
 							jQuery(document).ready(function($) {
 								$(".scroll").click(function(event){		
@@ -72,8 +89,18 @@ function hideURLbar(){ window.scrollTo(0,1); }
 					
 		</div>
 	</div>
+	<div style="display: flex; justify-content: center ;align-items: center">
+	<div class="cont"  style="display: none;">
+	<pre>
 	
-	<div class="banner" style="display: flex; justify-content: center; align-items: center;width="50%">
+	<p> <a href="placerequest">Place Crop Sell Request</a></p>
+	<p> <a href="viewcrophistory">View Crop History</a></p>
+	<p> <a href="viewmarketplace">View Marketplace</a></p>
+	</pre>
+   </div>
+   
+   </div>
+	
 	
 </body>
 </html>
