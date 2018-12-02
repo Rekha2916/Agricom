@@ -104,9 +104,9 @@ public class AdminController {
 	}
 
 	@RequestMapping("/closeBid")
-	public ModelAndView closeBid(@ModelAttribute FarmCrop crop, HttpServletRequest request, HttpServletResponse response){
+	public ModelAndView closeBid(@ModelAttribute FarmerCrop crop, HttpServletRequest request, HttpServletResponse response){
 		adao.finalizeBid(crop);
-		adao.closeBid(crop.getcID());
+		adao.closeBid(crop.getcId());
 		return new ModelAndView("AdminWelcome");
 	}
 

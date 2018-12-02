@@ -2,6 +2,7 @@ package com.farm.dao;
 
 import java.util.List;
 
+import com.farm.model.ContactUs;
 import com.farm.model.FarmFarmer;
 import com.farm.model.FarmTrader;
 import com.farm.model.FarmerCrop;
@@ -13,5 +14,6 @@ public interface IAdminDao {
 	public List<FarmerCrop> getRows();
 	public List<FarmFarmer> getFarmers();
 	public List<FarmTrader> getTraders();
+	public List<ContactUs> getMessages();
 	
 }

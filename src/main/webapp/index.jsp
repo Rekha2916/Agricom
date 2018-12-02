@@ -211,18 +211,19 @@ if(session==null)
 							</div>
 						</div>
 						<div class=" col-md-12 contact-bottom-bottom">
-						
+						<form method="post" action="contact">
 						<div class=" contact-text">
-							<input type="text" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}"/>
-							<input type="text" value="Second Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Second Name';}"/>
-							<input type="text" value="Email Id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Id';}"/>
+							<input type="text"  name="FName" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}"/>
+							<input type="text" name="LName" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Second Name';}"/>
+							<input type="text" name="Email" value="Email Id" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Id';}"/>
 						</div>
 						<div class="contact-textarea">
-							<textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message..</textarea>
+							<textarea name="Message" value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message..</textarea>
 						</div>
 						<div class="contact-but">
 							<input type="submit" value="submit" onclick="alert('Thank you...'')" />
 						</div>
+						</form>
 					</div>
 	
 				</div>

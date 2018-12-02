@@ -86,7 +86,7 @@ public class FarmerCrop {
 		this.cRequestStatus = cRequestStatus;
 	}
 	public int gettID() {
-		return cType;
+		return tID;
 	}
 	public void settID(int tID) {
 		this.tID=tID;
