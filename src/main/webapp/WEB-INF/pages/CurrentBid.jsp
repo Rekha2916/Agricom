@@ -157,6 +157,10 @@ h4 {
 						name="cID" readonly></td>
 				</tr>
 				<tr>
+					<td colspan="2"><input type="hidden" value=${tID }
+						name="tID" readonly></td>
+				</tr>
+				<tr>
 					<td>Crop Name</td>
 					<td><input type="text" value=${crop.getcName() } name="cName"
 						readonly></td>

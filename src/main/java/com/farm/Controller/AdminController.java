@@ -100,8 +100,16 @@ public class AdminController {
 	{
 		cdao.adminaccept(cId);
 		System.out.println("adminaccept....");
+		return new ModelAndView("ACurrentBid");
+	}
+
+	@RequestMapping("/closeBid")
+	public ModelAndView closeBid(@ModelAttribute FarmCrop crop, HttpServletRequest request, HttpServletResponse response){
+		adao.finalizeBid(crop);
+		adao.closeBid(crop.getcID());
 		return new ModelAndView("AdminWelcome");
 	}
+
 	@RequestMapping("/adreject")
 	public ModelAndView adminreject(HttpServletRequest request, HttpServletResponse response, @ModelAttribute FarmerCrop e)
 	{

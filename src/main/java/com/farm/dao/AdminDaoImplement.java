@@ -39,6 +39,16 @@ public class AdminDaoImplement {
 		String query="update g3_crops set cRequestStatus=2 where cId='"+e.getcId()+"'";
 		return jdbcTemplate.update(query);
 	}
+	public void finalizeBid(FarmerCrop e){
+		String sql="update g3_bidding set bidStatus = 1 where bID="+e.getcId();
+		jdbcTemplate.update();
+	}
+	public void closeBid(int id){
+		String sql="select cSellPrice from g3_bidding where cID="+i;
+		int cSellPrice = jdbcTemplate.query(sql);
+		String sql="update g3_crops set cSellPrice = "+cSellPrice+", cstatus = 1 where cID = "+id;
+		jdbcTemplate.update(sql);
+	}
 	public List<FarmerCrop> getRows(){    
 		return jdbcTemplate.query( "select * from g3_crops where cRequestStatus=1", new ResultSetExtractor<List<FarmerCrop>>(){  
 			public List<FarmerCrop> extractData(ResultSet rs) throws SQLException, DataAccessException {    

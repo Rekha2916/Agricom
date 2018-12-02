@@ -12,7 +12,8 @@ public class FarmerCrop {
 	private int cSellPrice;					//variable for final crop sold price
 
 	private int cBidStatus;					//variable for bid status
-	private int cRequestStatus;			//variable for request status
+	private int cRequestStatus;				//variable for request status
+	public int tID;							//variable for trader ID who buys the crop
 	//getter and setter for all properties
 
 
@@ -83,5 +84,11 @@ public class FarmerCrop {
 	}
 	public void setcRequestStatus(int cRequestStatus) {
 		this.cRequestStatus = cRequestStatus;
+	}
+	public int gettID() {
+		return cType;
+	}
+	public void settID(int tID) {
+		this.tID=tID;
 	}
 }
