@@ -52,6 +52,10 @@
 		<property name="jdbcTemplate" ref="jdbcTemplate">
 		</property>
 	</bean>
+<bean id="contactdao" class="com.farm.dao.ContactUsImplement">
+		<property name="jdbcTemplate" ref="jdbcTemplate">
+		</property>
+	</bean>
 <mvc:resources mapping="/resources/**" location="/resources/"  cache-period="31556926"/>
 
     <mvc:annotation-driven />
