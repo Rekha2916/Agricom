@@ -74,7 +74,7 @@ public class CropDaoImplement {
 	
  // get details of crop currently on bidding schedule
 	public List<FarmerCrop> getBidCrops(){    
-		return jdbcTemplate.query( "select * from g3_crops where cRequestStatus=1 and rownum=1 order by cId desc", new ResultSetExtractor<List<FarmerCrop>>(){  
+		return jdbcTemplate.query( "select * from g3_bidding where bidStatus=0 and rownum=1 order by bId desc", new ResultSetExtractor<List<FarmerCrop>>(){  
 			public List<FarmerCrop> extractData(ResultSet rs) throws SQLException, DataAccessException {    
 				List<FarmerCrop> list=new ArrayList<FarmerCrop>();  
 				while(rs.next()){  
@@ -82,13 +82,10 @@ public class CropDaoImplement {
 					f.setcId(rs.getInt(1));
 					f.setcType(rs.getString(2));
 					f.setcName(rs.getString(3));
-					f.setcFertilizerType(rs.getString(4));
-					f.setcQuantity(rs.getInt(5));
-					f.setcStatus(rs.getInt(6));
-					f.setcBasePrice(rs.getInt(7));
-					f.setcSellPrice(rs.getInt(8));
-					f.setcBidStatus(rs.getInt(9));
-					f.setcRequestStatus(rs.getInt(10));
+					f.setcQuantity(rs.getInt(4));
+					f.setcBasePrice(rs.getInt(5));
+					f.setcSellPrice(rs.getInt(6));
+					f.setcBidStatus(rs.getInt(7));
 
 					list.add(f);  
 				}  
@@ -97,8 +94,8 @@ public class CropDaoImplement {
 		});
 	}
 	// update selling price after bidding
-	public void insertBid(int bidAmount, String cName) {
-		String sql="update g3_crops set CSELLPRICE="+bidAmount+" where CNAME='"+cName+"'";
+	public void insertBid(int bidAmount, String cID) {
+		String sql="update g3_bidding set CSELLPRICE="+bidAmount+" where CID='"+cID+"'";
 		jdbcTemplate.update(sql);
 	}
 

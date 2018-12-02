@@ -38,8 +38,8 @@ public class TBiddingController {
 	@RequestMapping("/submitBid")
 	public ModelAndView updateBid(HttpServletRequest request, HttpServletResponse response) {
 		int bidAmount=Integer.parseInt(request.getParameter("bidAmount"));
-		String cName=request.getParameter("cName");
-		cdao.insertBid(bidAmount, cName);
+		String cID=Integer.parseInt(request.getParameter("cID"));
+		cdao.insertBid(bidAmount, cID);
 		return new ModelAndView("redirect:/placeBid");
 	}
 	//mapping for result after bid
